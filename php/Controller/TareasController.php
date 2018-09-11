@@ -11,7 +11,7 @@ class TareasController{
     //$this->model = new TareasModel();
   }
 
-  function Home($titulo){
+  function Mostrar($titulo){
   //  $Home = "home"
     //$Tareas = $this->model->GetHome();
     $this->view->Mostrar($titulo);

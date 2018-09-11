@@ -5,19 +5,19 @@ $controller = new TareasController();
 $partesURL = explode('/', $_GET['action']);
 
 if ($partesURL[0] == '') {
-  $controller->Home("home");
+  $controller->Mostrar("home");
 }elseif ($partesURL[0] == 'Contacto') {
-   $controller->Home("Contacto");
+   $controller->Mostrar("Contacto");
 
   }elseif ($partesURL[0] == 'AllMovies') {
-    $controller->Home("AllMovies");
+    $controller->Mostrar("AllMovies");
   }elseif ($partesURL[0] == 'Login') {
-      $controller->Home("Login");
+      $controller->Mostrar("Login");
   }elseif ($partesURL[0] == 'Registro') {
-    $controller->Home("Registro");
+    $controller->Mostrar("Registro");
 
   }elseif ($partesURL[0] == 'Sugerencias') {
-    $controller->Home("Sugerencias");
+    $controller->Mostrar("Sugerencias");
   }
 
 
