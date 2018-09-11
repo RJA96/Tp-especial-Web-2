@@ -1,0 +1,20 @@
+body{
+  background-image: url(img/images.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+option{
+  color: darkgray;
+}
+.hide{
+  display: none;
+}
+.resaltado{
+  background-color: #FF8633 !important;
+}
+*{
+  color: white;
+  font-weight: bold;
+}
