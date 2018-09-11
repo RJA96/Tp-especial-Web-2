@@ -1,6 +1,6 @@
 <?php
-require_once  "./view/TareasView.php";
-require_once  "./model/TareasModel.php";
+require_once  "php\View\TareasView.php";
+//require_once  "php\Model\TareasModel.php";
 
 class TareasController{
   private $view;
@@ -8,18 +8,18 @@ class TareasController{
 
   function __construct(){
     $this->view = new TareasView();
-    $this->model = new TareasModel();
+    //$this->model = new TareasModel();
   }
 
-  function Home(){
-    $Home = "home"
-    $Tareas = $this->model->GetHome();
-    $this->view->Mostrar($Home);
+  function Home($titulo){
+  //  $Home = "home"
+    //$Tareas = $this->model->GetHome();
+    $this->view->Mostrar($titulo);
   }
   function Contacto(){
-    $Contacto = "contacto"
-    $Tareas = $this->model->GetContacto();
-    $this->view->Mostrar($Contacto);
+  //  $Contacto = "contacto"
+  //  $Tareas = $this->model->GetContacto();
+    $this->view->Mostrar();
   }
 }
 
