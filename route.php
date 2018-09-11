@@ -13,8 +13,8 @@ if ($partesURL[0] == '') {
     $controller->Mostrar("AllMovies");
   }elseif ($partesURL[0] == 'Login') {
       $controller->Mostrar("Login");
-  }elseif ($partesURL[0] == 'Registro') {
-    $controller->Mostrar("Registro");
+  }elseif ($partesURL[0] == 'Registrar') {
+    $controller->Mostrar("Registrar");
 
   }elseif ($partesURL[0] == 'Sugerencias') {
     $controller->Mostrar("Sugerencias");

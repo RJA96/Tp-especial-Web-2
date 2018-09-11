@@ -35,9 +35,11 @@ class TareasView
         </div>
       </nav>
     </header>
+
     <?php
     if ($tarea == "home"){
     ?>
+
      <body>
        <div class="container use-ajax">
          <div class="row">
@@ -85,9 +87,11 @@ class TareasView
      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 
    </html>
+
    <?php
  }elseif ($tarea == "AllMovies"){
    ?>
+
    <body>
      <div class="container use-ajax">
        <article class="row mt-2 mb-2">
@@ -733,14 +737,169 @@ class TareasView
      </div>
    </body>
 
+<?php
+}elseif ($tarea == "Contacto") {
+ ?>
 
+ <body>
+   <div class="container use-ajax">
+     <article class="row">
+       <section class="col-12">
+         <form>
+           <section class="mt-5 form-row">
+               <div class="col">
+                 <label>Nombre</label>
+                 <input type="text" class="form-control" placeholder="Nombre">
+               </div>
+               <div class="col">
+                 <label>Apellido</label>
+                 <input type="text" class="form-control" placeholder="Apellido">
+               </div>
+           </section>
+           <section class=" form-row">
+             <div class="col">
+             <label>Numero de telefono</label>
+             <input type="text" class="form-control" placeholder="Num. de telefono">
+             </div>
+             <div class="col">
+             <label>Email</label>
+             <input type="email" class="form-control" placeholder="Email">
+             </div>
+           </section>
+           <section class="form-group mt-4">
+             <button type="submit" class="btn btn-dark">Enviar</button>
+           </section>
+         </form>
+       </section>
+     </article>
+   </div>
+ </body>
 
+<?php
+}elseif ($tarea == "Login") {
+ ?>
 
+ <body>
+   <div class="container use-ajax">
+     <article class="row">
+       <section class="col-12">
+         <form>
+           <section class="mt-5 form-group">
+             <label>Usuario</label>
+             <input type="text" class="form-control" placeholder="Usuario">
+           </section>
+           <section class="form-group">
+             <label>Contraseña</label>
+             <input type="password" class="form-control" placeholder="Contraseña">
+           </section>
+           <section class="form-group">
+             <button type="submit" class="btn btn-dark">Login</button>
+           </section>
+         </form>
+       </section>
+     </article>
+     <article class="row">
+       <section class="col-12">
+         <a class="registrarse" href="#" class="">Registrarse</a>
+       </section>
+     </article>
+   </div>
+ </body>
 
+ <?php
+}elseif ($tarea == "Registrar") {
+  ?>
+
+  <body>
+    <div class="container use-ajax">
+      <article class="row">
+        <section class="col-12">
+          <form>
+            <section class="mt-5 form-group">
+              <label>Usuario</label>
+              <input type="text" class="form-control" placeholder="Usuario">
+            </section>
+            <section class="form-row">
+                <section class="col">
+                  <label>Nombre</label>
+                  <input type="text" class="form-control" placeholder="Nombre">
+                </section>
+                <section class="col">
+                  <label>Apellido</label>
+                  <input type="text" class="form-control" placeholder="Apellido">
+                </section>
+            </section>
+            <section class="form-group">
+              <label>Email</label>
+              <input type="email" class="form-control" placeholder="Email">
+            </section>
+            <section class="form-group">
+              <section class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="Sexo" value="Masculino">
+                <label class="form-check-label" for="inlineRadio1">Masculino</label>
+              </section>
+              <section class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="Sexo" value="Femenino">
+                <label class="form-check-label" for="inlineRadio2">Femenino</label>
+              </section>
+            </section>
+            <section class="form-group">
+              <label>Contraseña</label>
+              <input type="password" class="form-control" placeholder="Contraseña">
+            </section>
+            <section class="form-group">
+              <button type="submit" class="btn btn-dark">Registrarse</button>
+            </section>
+          </form>
+        </section>
+      </article>
+    </div>
+  </body>
 
   <?php
-  }
+}elseif ($tarea == "Sugerencias") {
+   ?>
+
+   <body>
+     <div class="container use-ajax">
+       <article class="mt-5 row">
+         <div class="text-center col-12">
+           <p>En este espacio los invitamos a sugerir cambios, solicitar películas, dar su opinión. Todo es bienvenido.</p>
+           <p>Muchas gracias.</p>
+         </div>
+       </article>
+       <article class="row">
+         <section class="col-12">
+           <form>
+             <section class="mt-2 form-row">
+                 <section class="col">
+                   <label>Nombre</label>
+                   <input type="text" class="form-control" placeholder="Nombre">
+                 </section>
+                 <section class="col">
+                   <label>Apellido</label>
+                   <input type="text" class="form-control" placeholder="Apellido">
+                 </section>
+             </section>
+             <section class="form-group">
+               <label>Numero de telefono</label>
+               <input type="text" class="form-control" placeholder="Num. de telefono">
+             </section>
+             <section class="form-group">
+               <label for="Sugerencias">Sugerencias</label>
+               <textarea class="form-control">Sugerencias</textarea>
+             </section>
+             <section class="form-group">
+               <button type="submit" class="btn btn-dark">Enviar</button>
+             </section>
+           </form>
+         </section>
+       </article>
+     </div>
+   </body>
+
+  <?php
+    }
    }
  }
-
   ?>
