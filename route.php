@@ -1,5 +1,5 @@
 <?php
-require_once "php/controller/controller.php";
+require_once "php/controller/TareasController.php";
 //Para hacer mvc, creo el controlador, lo llamo y hago pretty url
 $controller = new TareasController();
 $partesURL = explode('/', $_GET['action']);
