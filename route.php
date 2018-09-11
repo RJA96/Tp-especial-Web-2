@@ -4,7 +4,7 @@ require_once "php\Controller\TareasController.php";
 $controller = new TareasController();
 $partesURL = explode('/', $_GET['action']);
 
-if ($partesURL[0] == '') {
+if ($partesURL[0] == 'Home') {
   $controller->Mostrar("home");
 }elseif ($partesURL[0] == 'Contacto') {
    $controller->Mostrar("Contacto");

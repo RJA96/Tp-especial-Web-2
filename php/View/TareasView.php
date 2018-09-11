@@ -26,11 +26,11 @@ class TareasView
         </button>
         <div class="collapse navbar-collapse">
           <div class="navbar-nav">
-            <a class="nav-item nav-link active home" href="#">Home<span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link all-movies" href="#">Todas las peliculas</a>
-            <a class="nav-item nav-link sugerencias" href="#">Sugerencias</a>
-            <a class="nav-item nav-link contacto" href="#">Contacto</a>
-            <a class="nav-item nav-link login" href="#">Login</a>
+            <a class="nav-item nav-link active home" href="Home">Home<span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link all-movies" href="AllMovies">Todas las peliculas</a>
+            <a class="nav-item nav-link sugerencias" href="Sugerencias">Sugerencias</a>
+            <a class="nav-item nav-link contacto" href="Contacto">Contacto</a>
+            <a class="nav-item nav-link login" href="Login">Login</a>
           </div>
         </div>
       </nav>
@@ -800,7 +800,7 @@ class TareasView
      </article>
      <article class="row">
        <section class="col-12">
-         <a class="registrarse" href="#" class="">Registrarse</a>
+         <a class="registrarse" href="Registrar" class="">Registrarse</a>
        </section>
      </article>
    </div>
