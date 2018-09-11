@@ -8,12 +8,18 @@ if ($partesURL[0] == '') {
   $controller->Home();
 }else {
   if ($partesURL[0] == 'Contacto') {
-    $controller->MostrarContacto();
-  }elseif ($partesURL[0] == 'borrar') {
-    BorrarTarea($partesURL[1]);
-  }elseif ($partesURL[0] == 'completada') {
-      CompletarTarea($partesURL[1]);
+    $controller->Mostrar("Contacto");
+  }elseif ($partesURL[0] == 'AllMovies') {
+    $controller->Mostrar("AllMovies");
+  }elseif ($partesURL[0] == 'Login') {
+      $controller->Mostrar("Login");
   }
+}elseif ($partesURL[0] == 'Registro') {
+    $controller->Mostrar("Registro");
+}
+}elseif ($partesURL[0] == 'Sugerencias') {
+    $controller->MostrarContacto("Sugerencias");
+}
 }
 
  ?>
