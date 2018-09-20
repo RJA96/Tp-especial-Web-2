@@ -15,10 +15,10 @@ class getMovies
         $sentencia->execute();
         return $sentencia->fetchAll(PDO::FETCH_ASSOC);
     }
-    function insertGenero($genero,$cantidadMovies){
+    function insertGenero($genero,$cantidad_peliculas){
 
-        $sentencia = $this->db->prepare("INSERT INTO genero(genero, ) VALUES(?,?)");
-        $sentencia->execute(array($genero,$cantidadMovies));
+        $sentencia = $this->db->prepare("INSERT INTO genero(genero, cantidad_peliculas ) VALUES(?,?)");
+        $sentencia->execute(array($genero,$cantidad_peliculas));
       }
     
       function BorrarTarea($idTarea){
