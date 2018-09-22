@@ -10,7 +10,6 @@ class TareasView
     $smarty = new Smarty();
 
     //$smarty->debugging = true;
-    // $smarty->display('templates/home.tpl');
 
     if ($tarea == "home"){
     $smarty->display('templates/home.tpl');
