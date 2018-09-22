@@ -1,5 +1,5 @@
 {include file="header.tpl"}
-<body>
+
 <div class="container use-ajax">
     <div class="row">
         <figure class="mt-5 mb-5 text-center col-12">
@@ -40,6 +40,5 @@
         </section>
     </article>
 </div>
-</body>
 
 {include file="footer.tpl"}
