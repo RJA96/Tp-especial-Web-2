@@ -12,47 +12,20 @@ class TareasView
     //$smarty->debugging = true;
     // $smarty->display('templates/home.tpl');
 
-   ?>
-
-
-
-
-
-
-    <?php
     if ($tarea == "home"){
-      $smarty->display('templates/home.tpl');
+    $smarty->display('templates/home.tpl');
 
-
-
-  }elseif ($tarea == "AllMovies"){
-    $smarty->display('templates/AllMovies.tpl');
-
-
-
-  }elseif ($tarea == "Contacto") {
-  $smarty->display('templates/Contacto.tpl');
-
-
-
-  }elseif ($tarea == "Login") {
-  $smarty->display('templates/Login.tpl');
-
-
-
-
-
-  }elseif ($tarea == "Registrar") {
-  $smarty->display('templates/Registrar.tpl');
-
-
-
-
-}elseif ($tarea == "Sugerencias") {
-  $smarty->display('templates/Sugerencias.tpl');
-?>
-  <?php
+      }elseif ($tarea == "AllMovies"){
+      $smarty->display('templates/AllMovies.tpl');
+      }elseif ($tarea == "Contacto") {
+      $smarty->display('templates/Contacto.tpl');
+      }elseif ($tarea == "Login") {
+      $smarty->display('templates/Login.tpl');
+      }elseif ($tarea == "Registrar") {
+      $smarty->display('templates/Registrar.tpl');
+      }elseif ($tarea == "Sugerencias") {
+      $smarty->display('templates/Sugerencias.tpl');
     }
-   }
- }
-  ?>
+  }
+}
+?>
