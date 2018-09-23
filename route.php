@@ -18,6 +18,8 @@ if ($partesURL[0] == 'Home') {
 
   }elseif ($partesURL[0] == 'Sugerencias') {
     $controller->Mostrar("Sugerencias");
+  }elseif ($partesURL[0] == 'PDO') {
+    $controller->Mostrar("PDO");
   }
 
 

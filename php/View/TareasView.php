@@ -6,25 +6,25 @@ require('libs/Smarty.class.php');
 class TareasView
 {
 
-  function Mostrar($tarea){
+  function Mostrar($Url){
     $smarty = new Smarty();
 
     //$smarty->debugging = true;
 
-    if ($tarea == "home"){
+    if ($Url == "home"){
     $smarty->display('templates/home.tpl');
 
-      }elseif ($tarea == "AllMovies"){
+      }elseif ($Url == "AllMovies"){
       $smarty->display('templates/AllMovies.tpl');
-      }elseif ($tarea == "Contacto") {
+      }elseif ($Url == "Contacto") {
       $smarty->display('templates/Contacto.tpl');
-      }elseif ($tarea == "Login") {
+      }elseif ($Url == "Login") {
       $smarty->display('templates/Login.tpl');
-      }elseif ($tarea == "Registrar") {
+      }elseif ($Url == "Registrar") {
       $smarty->display('templates/Registrar.tpl');
-      }elseif ($tarea == "Sugerencias") {
+      }elseif ($Url == "Sugerencias") {
       $smarty->display('templates/Sugerencias.tpl');
-      }elseif ($tarea == "test"){
+      }elseif ($Url == "PDO"){
         $smarty->display('templates/Test.tpl');
       }
   }
