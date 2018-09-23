@@ -1,4 +1,4 @@
-{include file="header.tpl"}
+{include file="Header.tpl"}
 
 <div class="container use-ajax">
     <div class="row">
@@ -41,4 +41,4 @@
     </article>
 </div>
 
-{include file="footer.tpl"}
+{include file="Footer.tpl"}

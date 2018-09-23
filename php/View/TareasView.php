@@ -24,7 +24,9 @@ class TareasView
       $smarty->display('templates/Registrar.tpl');
       }elseif ($tarea == "Sugerencias") {
       $smarty->display('templates/Sugerencias.tpl');
-    }
+      }elseif ($tarea == "test"){
+        $smarty->display('templates/Test.tpl');
+      }
   }
 }
 ?>
