@@ -3,10 +3,9 @@ require('libs/Smarty.class.php');
 /**
  *
  */
-class TareasView
-{
+class MoviesView{
 
-  function Mostrar($Url){
+  function parseULR($Url){
     $smarty = new Smarty();
 
     //$smarty->debugging = true;

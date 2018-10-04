@@ -1,14 +1,20 @@
 <?php
 
-class getMovies
-{
+class MoviesModel{
     private $db;
 
     function __construct()
     {
       $this->db = $this->Connect();
     }
-  
+
+    
+    function Conn(){
+      $conn = new PDO("mysql:host=localhost;dbname=db_movies", $username, '');
+      // set the PDO error mode to exception
+      $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+       echo "Connected successfully"; 
+    }
     function getGeneros(){
 
         $sentencia = $this->db->prepare( "select * from generos");
