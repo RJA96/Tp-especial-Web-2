@@ -1,5 +1,5 @@
 {include file="Header.tpl"}
 
-Test
+test
 
 {include file="Footer.tpl"}

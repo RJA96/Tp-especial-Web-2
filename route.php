@@ -1,7 +1,7 @@
 <?php
-require_once "php\Controller\TareasController.php";
+require_once "php\Controller\MoviesController.php";
 //Para hacer mvc, creo el controlador, lo llamo y hago pretty url
-$controller = new TareasController();
+$controller = new MoviesController();
 $partesURL = explode('/', $_GET['action']);
 
 if ($partesURL[0] == 'Home') {
