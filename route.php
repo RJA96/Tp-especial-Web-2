@@ -4,7 +4,7 @@ require_once "php\Controller\MoviesController.php";
 $controller = new MoviesController();
 $partesURL = explode('/', $_GET['action']);
 
-if ($partesURL[0] == 'Home') {
+if ($partesURL[0] == '') {
   $controller->Mostrar("home");
 }elseif ($partesURL[0] == 'Contacto') {
    $controller->Mostrar("Contacto");
