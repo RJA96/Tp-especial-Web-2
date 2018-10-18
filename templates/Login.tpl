@@ -5,11 +5,11 @@
          <form>
            <section class="mt-5 form-group">
              <label>Usuario</label>
-             <input type="text" class="form-control" placeholder="Usuario">
+             <input type="text" class="form-control" name="usuarioId" id="usuarioId" placeholder="Usuario">
            </section>
            <section class="form-group">
              <label>Contraseña</label>
-             <input type="password" class="form-control" placeholder="Contraseña">
+             <input type="password" class="form-control" name="passwordId" id="passwordId" placeholder="Contraseña">
            </section>
            <section class="form-group">
              <button type="submit" class="btn btn-dark">Login</button>

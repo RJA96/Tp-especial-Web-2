@@ -10,8 +10,6 @@ class SecuredController
         $this->logout();
       }
         $_SESSION['LAST_ACTIVITY'] = time();
-    }else{
-        header(LOGIN);
     }
   }
 

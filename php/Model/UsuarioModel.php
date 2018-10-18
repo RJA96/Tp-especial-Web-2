@@ -22,6 +22,8 @@ class UsuarioModel
       return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
 
+
+
   function InsertarUsuario($nombre,$email, $clave){
 
     $sentencia = $this->db->prepare("INSERT INTO usuario(nombre,email, clave) VALUES(?,?,?)");
