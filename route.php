@@ -22,10 +22,14 @@ if ($partesURL[0] == '') {
     $controller->MostrarPDO();
   }elseif ($partesURL[0] == 'agregar_genero') {
     $controller->InsertarGenero();
-    $controller->MostrarPDO();
 }elseif ($partesURL[0] == 'agregar_pelicula') {
   $controller->InsertarPelicula();
-  $controller->MostrarPDO();
+}elseif ($partesURL[0] == 'borrargenero') {
+  $controller->BorrarGenero($partesURL[1]);
+}elseif ($partesURL[0] == 'borrarpelicula') {
+  $controller->BorrarPeli($partesURL[1]);
+}elseif ($partesURL[0] == 'editarpelicula') {
+  $controller->BorrarPeli($partesURL[1]);
 }
 
  ?>

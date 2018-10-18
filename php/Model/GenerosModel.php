@@ -25,5 +25,17 @@ class GenerosModel
     $sentencia = $this->db->prepare("INSERT INTO genero(nombre, cantidad_peliculas) VALUES(?,?)");
     $sentencia->execute(array($nombre, $cantidad));
   }
+  function EditarGenero($id_genero, $nombre, $cantidad){
+    $sentencia = $this->db->prepare("UPDATE genero set nombre=?, cantidad_peliculas? where id_genero=?");
+    $sentencia->execute(array($nombre, $cantidad, $id_genero));
+  }
+
+
+  function BorrarGenero($id_genero){
+  $sentencia = $this->db->prepare( "DELETE from pelicula where id_genero=?");
+  $sentencia->execute(array($id_genero));
+  $sentencia = $this->db->prepare( "DELETE from genero where id_genero=?");
+  $sentencia->execute(array($id_genero));
+  }
 }
 ?>

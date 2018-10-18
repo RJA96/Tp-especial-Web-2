@@ -35,12 +35,43 @@ class MoviesController{
     $nombre = $_POST["Nombre"];
     $cantpeliculas = $_POST["cantidad_peliculas"];
     $this->modelgeneros->InsertarGenero($nombre, $cantpeliculas);
-
+    header("Location: http://".$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
+}
+function EditarGenero(){
+  $nombre = $_POST["Nombre"];
+  $cantpeliculas = $_POST["cantidad_peliculas"];
+  $this->modelgeneros->EditarGenero($nombre, $cantpeliculas, $id_genero);
   header("Location: http://".$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
 }
 
+  function BorrarGenero($param){
+    $this->modelgeneros->BorrarGenero($param[0]);
+    header("Location: http://".$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
+  }
+
+  function BorrarPeli($param){
+    $this->modelpeliculas->BorrarPeli($param[0]);
+    header("Location: http://".$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
+  }
+
 function InsertarPelicula(){
-  
+  $nombre = $_POST["Nombre_peli"];
+  $Año = $_POST["Año"];
+  $Valoracion = $_POST["Valoracion"];
+  $Duracion = $_POST["Duracion"];
+  $genero = $_POST["genero"];
+  $this->modelpeliculas->InsertarPelicula($nombre, $Año, $Valoracion ,$Duracion ,$genero);
+  header("Location: http://".$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
+}
+
+function EditarPelicula($param){
+  $nombre = $_POST["Nombre_peli"];
+  $Año = $_POST["Año"];
+  $Valoracion = $_POST["Valoracion"];
+  $Duracion = $_POST["Duracion"];
+  $genero = $_POST["genero"];
+  $this->modelpeliculas->EditarPelicula($param, $nombre, $Año, $Valoracion ,$Duracion ,$genero);
+  header("Location: http://".$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
 }
 
   function Contacto(){

@@ -9,6 +9,8 @@
           <th scope="col">Valoracion</th>
           <th scope="col">Duracion</th>
           <th scope="col">Genero</th>
+          <th scope="col">Borrar</th>
+          <th scope="col">Editar</th>
         </tr>
       </thead>
       <tbody>
@@ -19,6 +21,8 @@
           <th scope="row">{$peli['valoracion']}</th>
           <th scope="row">{$peli['duracion']}</th>
           <th scope="row">{$peli['id_genero']}</th>
+          <th><a href="borrarpelicula/{$peli['id_peliculas']}">Borrar</a></th>
+          <th><a href="editarpelicula/{$peli['id_peliculas']}">Editar</a></th>
         </tr>
         {/foreach}
       </tbody>
@@ -28,13 +32,13 @@
     <section class="col-12 mb-2">
       <form method="post" action="agregar_pelicula">
         <section class="mt-2 form-group">
-          <input type="text" class="form-control" placeholder="Nombre"name="Nombre" value="">
-          <input type="number" class="form-control" placeholder="Año"name="Año" value="">
-          <input type="number" class="form-control" placeholder="Valoración"name="Valoración" value="">
-          <input type="number" class="form-control" placeholder="Duración"name="Duración" value="">
+          <input type="text" class="form-control" placeholder="Nombre"id="Nombre_peli"name="Nombre_peli" value="">
+          <input type="number" class="form-control" placeholder="Año"id="Año"name="Año" value="">
+          <input type="number" class="form-control" placeholder="Valoración"id="Valoracion"name="Valoracion" value="">
+          <input type="number" class="form-control" placeholder="Duración"id="Duracion"name="Duracion" value="">
           <select class="form-control" id="genero"  name="genero">
                      {foreach from=$Generos item=gen}
-                     <option class="dropdown-item" value="{$cate['id_categoria']}" name="categoria">{$gen['id_genero']}</a>
+                     <option class="dropdown-item" value="{$gen['id_genero']}" name="categoria">{$gen['id_genero']}</a>
                        {/foreach}
                    </select>
         </section>
@@ -53,6 +57,8 @@
           <th scope="col">id_genero</th>
           <th scope="col">Nombre</th>
           <th scope="col">Cantidad de Peliculas</th>
+          <th scope="col">Borrar</th>
+          <th scope="col">Editar</th>
         </tr>
       </thead>
       <tbody>
@@ -61,6 +67,7 @@
           <th scope="row">{$gen['id_genero']}</th>
           <th scope="row">{$gen['nombre']}</th>
           <th scope="row">{$gen['cantidad_peliculas']}</th>
+          <th><a href="borrargenero/{$gen['id_genero']}">BORRAR</a></th>
         </tr>
         {/foreach}
       </tbody>
