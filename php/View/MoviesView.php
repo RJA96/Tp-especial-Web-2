@@ -11,5 +11,12 @@ class MoviesView{
     $smarty->assign('Generos',$Generos);
     $smarty->display('templates/Test.tpl');
   }
+
+  function MostrarEditar($Pelicula, $Generos){
+    $smarty = new Smarty();
+    $smarty->assign('Pelicula',$Pelicula);
+    $smarty->assign('Generos',$Generos);
+    $smarty->display('templates/EditarPeli.tpl');
+  }
 }
 ?>

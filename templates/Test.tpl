@@ -22,7 +22,7 @@
           <th scope="row">{$peli['duracion']}</th>
           <th scope="row">{$peli['id_genero']}</th>
           <th><a href="borrarpelicula/{$peli['id_peliculas']}">Borrar</a></th>
-          <th><a href="editarpelicula/{$peli['id_peliculas']}">Editar</a></th>
+          <th><a href="mostrarparaeditarpelicula/{$peli['id_peliculas']}">Editar</a></th>
         </tr>
         {/foreach}
       </tbody>

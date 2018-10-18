@@ -22,7 +22,8 @@
       'PDO'=>'MoviesController#MostrarPDO',
       'borrarpelicula'=> 'MoviesController#BorrarPeli',
       'agregar_pelicula'=> 'MoviesController#InsertarPelicula',
-      'editarpelicula'=> 'MoviesController#EditarPelicula'
+      'mostrarparaeditarpelicula'=> 'MoviesController#MostrarPDOedit',
+      'editpeli'=>  'MoviesController#EditarPelicula'
     ];
   }
 ?>

@@ -44,6 +44,12 @@ class MoviesController{
 
   }
 
+  function MostrarPDOedit($param){
+    $Pelicula = $this->modelpeliculas->getPelicula($param[0]);
+    $Generos = $this->modelgeneros->getGenero();
+    $this->viewPDO->MostrarEditar($Pelicula, $Generos);
+  }
+
   function InsertarGenero(){
     $nombre = $_POST["Nombre"];
     $cantpeliculas = $_POST["cantidad_peliculas"];
@@ -77,13 +83,13 @@ function InsertarPelicula(){
   header("Location: http://".$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
 }
 
-function EditarPelicula($param){
+function EditarPelicula(){
   $nombre = $_POST["Nombre_peli"];
   $Año = $_POST["Año"];
   $Valoracion = $_POST["Valoracion"];
   $Duracion = $_POST["Duracion"];
   $genero = $_POST["genero"];
-  $id_peli = $param[0];
+  $id_peli = $_POST["id_peli"];
   $this->modelpeliculas->EditarPelicula($nombre, $Año, $Valoracion ,$Duracion ,$genero,$id_peli);
   header("Location: http://".$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
 }
