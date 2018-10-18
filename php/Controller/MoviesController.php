@@ -23,6 +23,9 @@ class MoviesController{
   function Mostrar($titulo){
     $this->viewpagina->parseULR($titulo);
   }
+  function Home(){
+    $this->viewpagina->parseULR('home');
+  }
 
   function MostrarPDO(){
     $Peliculas = $this->modelpeliculas->getPeliculas();

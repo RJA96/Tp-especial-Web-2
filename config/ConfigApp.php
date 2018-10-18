@@ -11,14 +11,14 @@
     public static $ACTION = 'action';
     public static $PARAMS = 'params';
     public static $ACTIONS = [
-      ''=>'controller#Mostrar("home")',
-      'Home'=>'controller#Mostrar("home")',
-      'Contacto'=>'controller#Mostrar("Contacto")',
-      'AllMovies'=>'controller#Mostrar("AllMovies")',
-      'Login'=>'controller#Mostrar("Login")',
-      'Logout'=>'controller#Mostrar("Logout")',
-      'Registrar'=>'controller#Mostrar("Registrar")',
-      'Sugerencias'=>'controller#Mostrar("Sugerencias")',
+      ''=>'MoviesController#Mostrar("home")',
+      'Home'=>'MoviesController#Mostrar("home")',
+      'Contacto'=>'MoviesController#Mostrar("Contacto")',
+      'AllMovies'=>'MoviesController#Mostrar("AllMovies")',
+      'Login'=>'MoviesController#Mostrar("Login")',
+      'Logout'=>'MoviesController#Mostrar("Logout")',
+      'Registrar'=>'MoviesController#Mostrar("Registrar")',
+      'Sugerencias'=>'MoviesController#Mostrar("Sugerencias")',
     ];
   }
 ?>

@@ -30,7 +30,7 @@ if(isset($_GET['action'])){
         }
     }else{
       $controller =  new MoviesController();
-      echo $controller->Mostrar('Home');
+      echo $controller->Home();
     }
 }
  ?>
