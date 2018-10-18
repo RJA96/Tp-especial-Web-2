@@ -11,8 +11,8 @@
     public static $ACTION = 'action';
     public static $PARAMS = 'params';
     public static $ACTIONS = [
-      ''=>'MoviesController#Mostrar("home")',
-      'Home'=>'MoviesController#Mostrar("home")',
+      ''=>'MoviesController#Home()',
+      'Home'=>'MoviesController#Home()',
       'Contacto'=>'MoviesController#Mostrar("Contacto")',
       'AllMovies'=>'MoviesController#Mostrar("AllMovies")',
       'Login'=>'MoviesController#Mostrar("Login")',
