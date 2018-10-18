@@ -54,17 +54,15 @@
     <table class="table table-dark">
       <thead>
         <tr>
-          <th scope="col">id_genero</th>
           <th scope="col">Nombre</th>
           <th scope="col">Cantidad de Peliculas</th>
-          <th scope="col">Borrar</th>w
+          <th scope="col">Borrar</th>
           <th scope="col">Editar</th>
         </tr>
       </thead>
       <tbody>
         {foreach from=$Generos item=gen}
         <tr>
-          <th scope="row">{$gen['id_genero']}</th>
           <th scope="row">{$gen['nombre']}</th>
           <th scope="row">{$gen['cantidad_peliculas']}</th>
           <th><a href="borrargenero/{$gen['id_genero']}">BORRAR</a></th>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-10-2018 a las 20:28:43
+-- Tiempo de generación: 19-10-2018 a las 01:46:38
 -- Versión del servidor: 10.1.36-MariaDB
 -- Versión de PHP: 7.2.10
 
@@ -39,8 +39,11 @@ CREATE TABLE `genero` (
 --
 
 INSERT INTO `genero` (`id_genero`, `nombre`, `cantidad_peliculas`) VALUES
-(9, 'dsa', 333),
-(10, 'dasdas', 444);
+(11, 'Accion', 100),
+(12, 'Ciencia ficción', 200),
+(13, 'Comedia', 150),
+(14, 'Drama ', 150),
+(15, 'Suspenso', 125);
 
 -- --------------------------------------------------------
 
@@ -62,7 +65,10 @@ CREATE TABLE `pelicula` (
 --
 
 INSERT INTO `pelicula` (`id_peliculas`, `nombre`, `año`, `valoracion`, `duracion`, `id_genero`) VALUES
-(4, 'Lucha', 2012, 2, 5, 10);
+(5, '300', 2006, 3, 117, 11),
+(8, 'Avengers: Infinity War', 2018, 5, 156, 12),
+(9, 'Avengers: Infinity War', 2018, 156, 5, 12),
+(10, 'The Fault in Our Stars', 2014, 125, 3, 14);
 
 -- --------------------------------------------------------
 
@@ -76,6 +82,13 @@ CREATE TABLE `usuario` (
   `email` text NOT NULL,
   `clave` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`id_usuario`, `nombre`, `email`, `clave`) VALUES
+(1, 'admin', 'admin@admin.com', 'admin');
 
 --
 -- Índices para tablas volcadas
@@ -108,19 +121,19 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `genero`
 --
 ALTER TABLE `genero`
-  MODIFY `id_genero` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_genero` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de la tabla `pelicula`
 --
 ALTER TABLE `pelicula`
-  MODIFY `id_peliculas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_peliculas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restricciones para tablas volcadas
