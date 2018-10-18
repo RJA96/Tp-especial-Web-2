@@ -28,12 +28,21 @@ class MoviesController{
     $Peliculas = $this->modelpeliculas->getPeliculas();
     $Generos = $this->modelgeneros->getGenero();
     $this->viewPDO->MostrarTabla($Peliculas, $Generos);
+
   }
 
-  //funcion MostrarTabla($titulo){
-    //$Peliculas = $this->model->getPeliculas();
-    //$this->view->Mostrar($this->titulo, $Tareas);
-  //}
+  function InsertarGenero(){
+    $nombre = $_POST["Nombre"];
+    $cantpeliculas = $_POST["cantidad_peliculas"];
+    $this->modelgeneros->InsertarGenero($nombre, $cantpeliculas);
+
+  header("Location: http://".$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
+}
+
+function InsertarPelicula(){
+  
+}
+
   function Contacto(){
   //  $Contacto = "contacto"
   //  $Tareas = $this->model->GetContacto();

@@ -20,7 +20,12 @@ if ($partesURL[0] == '') {
     $controller->Mostrar("Sugerencias");
   }elseif ($partesURL[0] == 'PDO') {
     $controller->MostrarPDO();
-  }
-
+  }elseif ($partesURL[0] == 'agregar_genero') {
+    $controller->InsertarGenero();
+    $controller->MostrarPDO();
+}elseif ($partesURL[0] == 'agregar_pelicula') {
+  $controller->InsertarPelicula();
+  $controller->MostrarPDO();
+}
 
  ?>

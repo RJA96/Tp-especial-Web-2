@@ -20,5 +20,10 @@ class GenerosModel
       $sentencia->execute();
       return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
+
+  function InsertarGenero($nombre, $cantidad){
+    $sentencia = $this->db->prepare("INSERT INTO genero(nombre, cantidad_peliculas) VALUES(?,?)");
+    $sentencia->execute(array($nombre, $cantidad));
+  }
 }
 ?>

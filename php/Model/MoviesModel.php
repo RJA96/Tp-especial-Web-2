@@ -20,5 +20,9 @@ class MoviesModel{
         $sentencia->execute();
         return $sentencia->fetchAll(PDO::FETCH_ASSOC);
     }
+    function InsertarPelicula($nombre, $año, $valoracion ,$duracion ,$genero){
+      $sentencia = $this->db->prepare("INSERT INTO pelicula(nombre, año, valoracion, duracion, id_genero) VALUES(?,?,?,?,?)");
+      $sentencia->execute(array($nombre, $año, $valoracion, $duracion, $id_genero));
+    }
 
 }
