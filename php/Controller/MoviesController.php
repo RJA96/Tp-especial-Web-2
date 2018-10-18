@@ -70,7 +70,8 @@ function EditarPelicula($param){
   $Valoracion = $_POST["Valoracion"];
   $Duracion = $_POST["Duracion"];
   $genero = $_POST["genero"];
-  $this->modelpeliculas->EditarPelicula($param, $nombre, $Año, $Valoracion ,$Duracion ,$genero);
+  $id_peli = $param[0];
+  $this->modelpeliculas->EditarPelicula($nombre, $Año, $Valoracion ,$Duracion ,$genero,$id_peli);
   header("Location: http://".$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
 }
 

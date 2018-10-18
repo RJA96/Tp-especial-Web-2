@@ -44,12 +44,13 @@
         </section>
         <section class="form-group mb-2">
           <button type="submit" class="btn btn-dark upload" name="Upload">Upload</button>
-          <button type="button" class="btn btn-dark edit" name="Edit">Edit</button>
+          <button type="submit" class="btn btn-dark edit" name="Edit">Edit</button>
           <button type="button" class="btn btn-dark delete" name="Delate">Delete</button>
         </section>
       </form>
     </section>
   </article>
+
   <section class="col-6">
     <table class="table table-dark">
       <thead>
@@ -57,7 +58,7 @@
           <th scope="col">id_genero</th>
           <th scope="col">Nombre</th>
           <th scope="col">Cantidad de Peliculas</th>
-          <th scope="col">Borrar</th>
+          <th scope="col">Borrar</th>w
           <th scope="col">Editar</th>
         </tr>
       </thead>

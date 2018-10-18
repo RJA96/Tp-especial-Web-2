@@ -20,7 +20,11 @@ class GenerosModel
       $sentencia->execute();
       return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
-
+  function getGeneroID($id){
+    $sentencia = $this->db->prepare( "SELECT * from id_genero=?");
+    $sentencia->execute(array($id));
+    return $sentencia->fetch(PDO::FETCH_ASSOC);
+  }
   function InsertarGenero($nombre, $cantidad){
     $sentencia = $this->db->prepare("INSERT INTO genero(nombre, cantidad_peliculas) VALUES(?,?)");
     $sentencia->execute(array($nombre, $cantidad));
