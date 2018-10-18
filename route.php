@@ -19,7 +19,7 @@ if ($partesURL[0] == '') {
   }elseif ($partesURL[0] == 'Sugerencias') {
     $controller->Mostrar("Sugerencias");
   }elseif ($partesURL[0] == 'PDO') {
-    $controller->Mostrar("PDO");
+    $controller->MostrarPDO();
   }
 
 
