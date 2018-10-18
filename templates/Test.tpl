@@ -44,8 +44,7 @@
         </section>
         <section class="form-group mb-2">
           <button type="submit" class="btn btn-dark upload" name="Upload">Upload</button>
-          <button type="submit" class="btn btn-dark edit" name="Edit">Edit</button>
-          <button type="button" class="btn btn-dark delete" name="Delate">Delete</button>
+
         </section>
       </form>
     </section>

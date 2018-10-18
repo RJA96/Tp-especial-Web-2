@@ -5,7 +5,7 @@ require_once ('libs/Smarty.class.php');
  */
 class PaginaView{
 
-  function parseULR($Url){
+  function parseURL($Url){
     $smarty = new Smarty();
     if ($Url == "home"){
     $smarty->display('templates/home.tpl');

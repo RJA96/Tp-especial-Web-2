@@ -21,11 +21,21 @@ class MoviesController{
 
 
   function Mostrar($titulo){
-    $this->viewpagina->parseULR($titulo);
+    $this->viewpagina->parseURL($titulo);
   }
   function Home(){
-    $this->viewpagina->parseULR('home');
+    $this->viewpagina->parseURL('home');
   }
+  function Contacto(){
+    $this->viewpagina->parseURL('Contacto');
+  }
+  function AllMovies(){
+    $this->viewpagina->parseURL('AllMovies');
+  }
+  function Login(){
+    $this->viewpagina->parseURL('Login');
+  }
+
 
   function MostrarPDO(){
     $Peliculas = $this->modelpeliculas->getPeliculas();
@@ -78,11 +88,6 @@ function EditarPelicula($param){
   header("Location: http://".$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
 }
 
-  function Contacto(){
-  //  $Contacto = "contacto"
-  //  $Tareas = $this->model->GetContacto();
-    $this->view->parseULR();
-  }
 }
 
 ?>

@@ -30,7 +30,7 @@ class MoviesModel{
     }
 
     function EditarPelicula($nombre, $año, $valoracion ,$duracion ,$id_genero, $id_pelicula){
-      $sentencia = $this->db->prepare("UPDATE `pelicula` SET `nombre`=?,`año`=?,`valoracion`=?,`duracion`=?,`id_genero`=? WHERE `id_peliculas`=?");
+      $sentencia = $this->db->prepare("UPDATE pelicula SET nombre=?,año=?,valoracion=?,duracion=?,id_genero=? WHERE id_peliculas=?");
       $sentencia->execute(array($nombre, $año, $valoracion, $duracion, $id_genero, $id_pelicula));
     }
 
