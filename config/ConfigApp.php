@@ -1,11 +1,11 @@
 <?php
-  define('HOME', 'Location: http://'.$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
-  define('CONTACTO', 'Location: http://'.$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]). '/Contacto');
-  define('ALLMOVIES', 'Location: http://'.$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]). '/AllMovies');
-  define('LOGIN', 'Location: http://'.$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]). '/Login');
-  define('REGISTRAR', 'Location: http://'.$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]). '/Registrar');
-  define('LOGOUT', 'Location: http://'.$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]). '/Logout');
-  define('SUGERENCIAS', 'Location: http://'.$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]). '/Sugerencias');
+  define('HOME', 'Location: home');
+  define('CONTACTO', 'Location: Contacto');
+  define('ALLMOVIES', 'Location: AllMovies');
+  define('LOGIN', 'Location: Login');
+  define('REGISTRAR', 'Location: Registrar');
+  define('LOGOUT', 'Location: Logout');
+  define('SUGERENCIAS', 'Location: Sugerencias');
 
   class ConfigApp{
     public static $ACTION = 'action';
