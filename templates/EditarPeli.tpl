@@ -1,4 +1,8 @@
+{if $user == null}
+{include file="HeaderLogout.tpl"}
+{else}
 {include file="Header.tpl"}
+{/if}
 
 <article class="row">
   <section class="col-12 mb-2">

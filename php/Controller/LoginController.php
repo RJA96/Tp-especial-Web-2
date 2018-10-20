@@ -32,18 +32,18 @@ class LoginController
       $clave = $_POST["passwordId"];
       $db_User = $this->model->getUser($user);
 
-      if(isset($db_User)){
+      if((isset($db_User))&&($user!=null)){
           if (password_verify($clave, $db_User[0]['clave'])){
               session_start();
               $_SESSION["User"] = $user;
               header(HOME);
           }else{
-            $this->view->mostrarLogin("Contraseña incorrecta");
+            $this->view->mostrarLogin("");
 
           }
       }else{
 
-        $this->view->mostrarLogin("No existe el usario");
+        $this->view->mostrarLogin("");
       }
 
   }

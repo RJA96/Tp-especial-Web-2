@@ -1,7 +1,11 @@
+{if $user != null}
+{include file="HeaderLogout.tpl"}
+{else}
 {include file="Header.tpl"}
+{/if}
+
 
 {if $user != null}
-
      <div class="container use-ajax">
        <article class="row mt-2 mb-2">
          <figure class="col-12 float-lg-left col-lg-4">

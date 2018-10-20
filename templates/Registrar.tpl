@@ -1,4 +1,8 @@
+{if $user != null}
+{include file="HeaderLogout.tpl"}
+{else}
 {include file="Header.tpl"}
+{/if}
 <div class="container use-ajax">
       <article class="row">
         <section class="col-12">

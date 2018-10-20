@@ -1,16 +1,13 @@
 <?php
 class LoginView
 {
-  private $Smarty;
-
-  function __construct()
-  {
-    $this->Smarty = new Smarty();
-  }
 
 
-  function mostrarLogin($message = ''){
-    $this->Smarty->display('templates/Login.tpl');
+
+  function mostrarLogin($user){
+    $smarty = new Smarty();
+    $smarty->assign('user',$user);
+    $smarty->display('templates/Login.tpl');
   }
 }
 

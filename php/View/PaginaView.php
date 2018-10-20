@@ -5,8 +5,9 @@ require_once ('libs/Smarty.class.php');
  */
 class PaginaView{
 
-  function Home(){
+  function Home($user){
     $smarty = new Smarty();
+    $smarty->assign('user',$user);
     $smarty->display('templates/home.tpl');
   }
   function AllMovies($user){
@@ -14,20 +15,24 @@ class PaginaView{
     $smarty->assign('user',$user);
     $smarty->display('templates/AllMovies.tpl');
   }
-  function Contacto(){
+  function Contacto($user){
     $smarty = new Smarty();
+    $smarty->assign('user',$user);
     $smarty->display('templates/Contacto.tpl');
   }
-  function Login(){
+  function Login($user){
     $smarty = new Smarty();
+    $smarty->assign('user',$user);
     $smarty->display('templates/Login.tpl');
   }
-  function Registrar(){
+  function Registrar($user){
     $smarty = new Smarty();
+    $smarty->assign('user',$user);
     $smarty->display('templates/Registrar.tpl');
   }
-  function Sugerencias(){
+  function Sugerencias($user){
     $smarty = new Smarty();
+    $smarty->assign('user',$user);
     $smarty->display('templates/Sugerencias.tpl');
   }
 

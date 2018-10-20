@@ -1,4 +1,8 @@
+{if $user != null}
+{include file="HeaderLogout.tpl"}
+{else}
 {include file="Header.tpl"}
+{/if}
   <section class="mx-auto mt-2 col-8">
     <table class="table table-striped table-dark">
       <thead>

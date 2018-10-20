@@ -1,4 +1,10 @@
+{if $user != null}
+{include file="HeaderLogout.tpl"}
+{else}
 {include file="Header.tpl"}
+{/if}
+
+{if $user == null}
 <div class="container use-ajax">
      <article class="row">
        <section class="col-6 mx-auto">
@@ -23,4 +29,11 @@
        </section>
      </article>
    </div>
+   {else}
+   <article class="row">
+       <section class="mt-5 text-center col-12">
+           <p>Ya se encuentra Loegado</p>
+       </section>
+   </article>
+   {/if}
 {include file="Footer.tpl"}

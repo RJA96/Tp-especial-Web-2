@@ -27,10 +27,20 @@ class MoviesController extends SecuredController{
   //}else{
   //  $this->Login();
   function Home(){
-      $this->viewpagina->Home();
+    if(isset($_SESSION["User"])){
+      $user = $_SESSION["User"];
+      $this->viewpagina->Home($user);
+    }else{
+      $this->viewpagina->Home("");
+    }
   }
   function Contacto(){
-    $this->viewpagina->Contacto();
+    if(isset($_SESSION["User"])){
+      $user = $_SESSION["User"];
+      $this->viewpagina->Contacto($user);
+    }else{
+      $this->viewpagina->Contacto("");
+    }
   }
   function AllMovies(){
     if(isset($_SESSION["User"])){
@@ -41,13 +51,28 @@ class MoviesController extends SecuredController{
     }
   }
   function Login(){
-    $this->viewpagina->Login();
+    if(isset($_SESSION["User"])){
+      $user = $_SESSION["User"];
+      $this->viewpagina->Login($user);
+    }else{
+      $this->viewpagina->Login("");
+    }
   }
   function Registrar(){
-    $this->viewpagina->Registrar();
+    if(isset($_SESSION["User"])){
+      $user = $_SESSION["User"];
+      $this->viewpagina->Registrar($user);
+    }else{
+      $this->viewpagina->Registrar("");
+    }
   }
   function Sugerencias(){
-    $this->viewpagina->Sugerencias();
+    if(isset($_SESSION["User"])){
+      $user = $_SESSION["User"];
+      $this->viewpagina->Sugerencias($user);
+    }else{
+      $this->viewpagina->Registrar("");
+    }
   }
 
   function MostrarPDOGeneros(){
@@ -76,7 +101,7 @@ class MoviesController extends SecuredController{
   function MostrarPDOPeliculasporGenero($Genero){
     $Peliculas = $this->modelpeliculas->getPeliculasporGenero($Genero[0]);
     $Generos = $this->modelgeneros->getGenero();
-    $this->viewPDO->MostrarPeliculas($Peliculas, $Generos);
+    $this->viewPDO->MostrarPeliculas($Peliculas, $Generos,"");
   }
 
   function MostrarPDOeditpelicula($param){
@@ -84,9 +109,9 @@ class MoviesController extends SecuredController{
       $user = $_SESSION["User"];
       $Pelicula = $this->modelpeliculas->getPelicula($param[0]);
       $Generos = $this->modelgeneros->getGenero();
-      $this->viewPDO->MostrarEditar($Pelicula, $Generos);
+      $this->viewPDO->MostrarEditar($Pelicula, $Generos, "");
       }else{
-        $this->viewpagina->Login();
+        $this->viewpagina->Login("");
       }
   }
 
@@ -94,9 +119,9 @@ class MoviesController extends SecuredController{
     if(isset($_SESSION["User"])){
       $user = $_SESSION["User"];
     $Generos = $this->modelgeneros->getGeneroID($param[0]);
-    $this->viewPDO->MostrarEditarGenero($Generos);
+    $this->viewPDO->MostrarEditarGenero($Generos,"");
     }else{
-      $this->viewpagina->Login();
+      $this->viewpagina->Login("");
     }
   }
 
@@ -115,7 +140,7 @@ function EditarGenero(){
   $this->modelgeneros->EditarGenero($id_genero, $nombre, $cantpeliculas);
   $this->MostrarPDOGeneros();
   }else{
-    $this->viewpagina->Login();
+    $this->viewpagina->Login("");
   }
 }
 
@@ -125,7 +150,7 @@ function EditarGenero(){
       $this->modelgeneros->BorrarGenero($param[0]);
       $this->MostrarPDOGeneros();
     }else{
-      $this->viewpagina->Login();
+      $this->viewpagina->Login("");
     }
   }
 
@@ -135,7 +160,7 @@ function EditarGenero(){
       $this->modelpeliculas->BorrarPeli($param[0]);
       $this->MostrarPDOPeliculas();
     }else{
-      $this->viewpagina->Login();
+      $this->viewpagina->Login("");
     }
   }
 
@@ -150,7 +175,7 @@ function InsertarPelicula(){
     $this->modelpeliculas->InsertarPelicula($nombre, $Año, $Valoracion ,$Duracion ,$genero);
     $this->MostrarPDOPeliculas();
   }else{
-    $this->viewpagina->Login();
+    $this->viewpagina->Login("");
   }
 }
 
@@ -166,7 +191,7 @@ function EditarPelicula(){
     $this->modelpeliculas->EditarPelicula($nombre, $Año, $Valoracion ,$Duracion ,$genero,$id_peli);
     $this->MostrarPDOPeliculas();
   }else{
-    $this->viewpagina->Login();
+    $this->viewpagina->Login("");
   }
 
 }

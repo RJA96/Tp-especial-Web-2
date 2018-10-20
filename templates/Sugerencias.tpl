@@ -1,5 +1,10 @@
+{if $user != null}
+{include file="HeaderLogout.tpl"}
+{else}
 {include file="Header.tpl"}
+{/if}
 
+    {if $user != null}
      <div class="container use-ajax">
        <article class="mt-5 row">
          <div class="text-center col-12">
@@ -35,5 +40,12 @@
          </section>
        </article>
      </div>
+     {else}
+     <article class="row">
+         <section class="mt-5 text-center col-12">
+             <p>Para poder comunicarse debe estar registrado, puede registrarse <a class="" href="Login">Aqui</a></p>
+         </section>
+     </article>
+     {/if}
 
 {include file="Footer.tpl"}
