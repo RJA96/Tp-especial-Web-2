@@ -22,8 +22,8 @@ class MoviesModel{
     }
 
     function getPelicula($id){
-        $sentencia = $this->db->prepare( "SELECT * FROM pelicula WHERE id_peliculas=$id");
-        $sentencia->execute();
+        $sentencia = $this->db->prepare( "SELECT * FROM pelicula WHERE id_peliculas=?");
+        $sentencia->execute(array($id));
         return $sentencia->fetchAll(PDO::FETCH_ASSOC);
     }
     function InsertarPelicula($nombre, $año, $valoracion ,$duracion ,$genero){

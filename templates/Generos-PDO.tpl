@@ -58,6 +58,7 @@
           <th scope="col">Cantidad de Peliculas</th>
           <th scope="col">Borrar</th>
           <th scope="col">Editar</th>
+          <th scope="col">Ver Peliculas</th>
         </tr>
       </thead>
       <tbody>
@@ -65,8 +66,9 @@
         <tr>
           <th scope="row">{$gen['nombre']}</th>
           <th scope="row">{$gen['cantidad_peliculas']}</th>
-          <th><a href="borrargenero/{$gen['id_genero']}">BORRAR</a></th>
+          <th><a href="borrargenero/{$gen['id_genero']}">Borrar</a></th>
           <th><a href="mostrarparaeditargenero/{$gen['id_genero']}">Editar</a></th>
+          <th><a href="mostrarpeliculasporgenero/{$gen['id_genero']}">Ver Peliculas</a></th>
         </tr>
         {/foreach}
       </tbody>
@@ -81,8 +83,6 @@
           <input type="number" class="form-control" id="cantidad_peliculas" placeholder="cantidad_peliculas"name="cantidad_peliculas" value="">
         <section class="form-group mb-2">
           <button type="submit" class="btn btn-dark upload" name="Upload">Upload</button>
-          <button type="button" class="btn btn-dark edit" name="Edit">Edit</button>
-          <button type="button" class="btn btn-dark delete" name="Delate">Delete</button>
         </section>
       </form>
     </section>

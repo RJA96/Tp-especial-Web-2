@@ -20,11 +20,15 @@
       'Registrar'=>'MoviesController#Registrar',
       'Sugerencias'=>'MoviesController#Sugerencias',
       'PDO'=>'MoviesController#MostrarPDO',
+      //PDO-Pelicula
       'borrarpelicula'=> 'MoviesController#BorrarPeli',
       'agregar_pelicula'=> 'MoviesController#InsertarPelicula',
-      'mostrarparaeditarpelicula'=> 'MoviesController#MostrarPDOedit',
+      'mostrarparaeditarpelicula'=> 'MoviesController#MostrarPDOeditpelicula',
       'editpeli'=>  'MoviesController#EditarPelicula',
-      'mostrarparaeditargenero'=>
+      'borrargenero'=> 'MoviesController#BorrarGenero',
+      'agregar_genero'=> 'MoviesController#InsertarGenero',
+      'mostrarparaeditargenero'=>'MoviesController#MostrarPDOeditgenero',
+      'editargenero'=>'MoviesController#EditarGenero',
     ];
   }
 ?>

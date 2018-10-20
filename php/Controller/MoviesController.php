@@ -34,6 +34,10 @@ class MoviesController extends SecuredController{
   function Login(){
     $this->viewpagina->Login();
   }
+  function Sugerencias(){
+    $this->viewpagina->Sugerencias();
+  }
+
 
 
   function MostrarPDO(){
@@ -43,33 +47,39 @@ class MoviesController extends SecuredController{
 
   }
 
-  function MostrarPDOedit($param){
+  function MostrarPDOeditpelicula($param){
     $Pelicula = $this->modelpeliculas->getPelicula($param[0]);
     $Generos = $this->modelgeneros->getGenero();
     $this->viewPDO->MostrarEditar($Pelicula, $Generos);
+  }
+
+  function MostrarPDOeditgenero($param){
+    $Generos = $this->modelgeneros->getGeneroID($param[0]);
+    $this->viewPDO->MostrarEditarGenero($Generos);
   }
 
   function InsertarGenero(){
     $nombre = $_POST["Nombre"];
     $cantpeliculas = $_POST["cantidad_peliculas"];
     $this->modelgeneros->InsertarGenero($nombre, $cantpeliculas);
-    header("Location: http://".$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
+    $this->MostrarPDO();
 }
 function EditarGenero(){
+  $id_genero = $_POST["id_genero"];
   $nombre = $_POST["Nombre"];
   $cantpeliculas = $_POST["cantidad_peliculas"];
-  $this->modelgeneros->EditarGenero($nombre, $cantpeliculas, $id_genero);
-  header("Location: http://".$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
+  $this->modelgeneros->EditarGenero($id_genero, $nombre, $cantpeliculas);
+  $this->MostrarPDO();
 }
 
   function BorrarGenero($param){
     $this->modelgeneros->BorrarGenero($param[0]);
-    header("Location: http://".$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
+    $this->MostrarPDO();
   }
 
   function BorrarPeli($param){
     $this->modelpeliculas->BorrarPeli($param[0]);
-    header("Location: http://".$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
+    $this->MostrarPDO();
   }
 
 function InsertarPelicula(){
@@ -79,7 +89,7 @@ function InsertarPelicula(){
   $Duracion = $_POST["Duracion"];
   $genero = $_POST["genero"];
   $this->modelpeliculas->InsertarPelicula($nombre, $Año, $Valoracion ,$Duracion ,$genero);
-  header("Location: http://".$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
+  $this->MostrarPDO();
 }
 
 function EditarPelicula(){
@@ -90,7 +100,7 @@ function EditarPelicula(){
   $genero = $_POST["genero"];
   $id_peli = $_POST["id_peli"];
   $this->modelpeliculas->EditarPelicula($nombre, $Año, $Valoracion ,$Duracion ,$genero,$id_peli);
-  header("Location: http://".$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
+  $this->MostrarPDO();
 }
 
 }

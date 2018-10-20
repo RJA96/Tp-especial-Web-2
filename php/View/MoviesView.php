@@ -9,7 +9,7 @@ class MoviesView{
     $smarty = new Smarty();
     $smarty->assign('Peliculas',$Peliculas);
     $smarty->assign('Generos',$Generos);
-    $smarty->display('templates/Test.tpl');
+    $smarty->display('templates/Generos-PDO.tpl');
   }
 
   function MostrarEditar($Pelicula, $Generos){
@@ -17,6 +17,12 @@ class MoviesView{
     $smarty->assign('Pelicula',$Pelicula);
     $smarty->assign('Generos',$Generos);
     $smarty->display('templates/EditarPeli.tpl');
+  }
+
+  function MostrarEditarGenero($Generos){
+    $smarty = new Smarty();
+    $smarty->assign('Generos',$Generos);
+    $smarty->display('templates/EditarGenero.tpl');
   }
 }
 ?>

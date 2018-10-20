@@ -21,7 +21,7 @@ class GenerosModel
       return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
   function getGeneroID($id){
-    $sentencia = $this->db->prepare( "SELECT * from id_genero=?");
+    $sentencia = $this->db->prepare( "SELECT * FROM genero WHERE id_genero=?");
     $sentencia->execute(array($id));
     return $sentencia->fetch(PDO::FETCH_ASSOC);
   }
@@ -30,14 +30,13 @@ class GenerosModel
     $sentencia->execute(array($nombre, $cantidad));
   }
   function EditarGenero($id_genero, $nombre, $cantidad){
-    $sentencia = $this->db->prepare("UPDATE genero set nombre=?, cantidad_peliculas? where id_genero=?");
+    $sentencia = $this->db->prepare("UPDATE genero SET nombre=?, cantidad_peliculas=? WHERE id_genero=?");
     $sentencia->execute(array($nombre, $cantidad, $id_genero));
   }
 
 
   function BorrarGenero($id_genero){
-  $sentencia = $this->db->prepare( "DELETE from pelicula where id_genero=?");
-  $sentencia->execute(array($id_genero));
+
   $sentencia = $this->db->prepare( "DELETE from genero where id_genero=?");
   $sentencia->execute(array($id_genero));
   }
