@@ -22,20 +22,17 @@ class MoviesController extends SecuredController{
   }
 
 
-  function Mostrar($titulo){
-    $this->viewpagina->parseURL($titulo);
-  }
   function Home(){
-    $this->viewpagina->parseURL('home');
+    $this->viewpagina->Home();
   }
   function Contacto(){
-    $this->viewpagina->parseURL('Contacto');
+    $this->viewpagina->Contacto();
   }
   function AllMovies(){
-    $this->viewpagina->parseURL('AllMovies');
+    $this->viewpagina->AllMovies();
   }
   function Login(){
-    $this->viewpagina->parseURL('Login');
+    $this->viewpagina->Login();
   }
 
 

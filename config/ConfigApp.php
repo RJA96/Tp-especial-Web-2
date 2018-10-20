@@ -23,7 +23,8 @@
       'borrarpelicula'=> 'MoviesController#BorrarPeli',
       'agregar_pelicula'=> 'MoviesController#InsertarPelicula',
       'mostrarparaeditarpelicula'=> 'MoviesController#MostrarPDOedit',
-      'editpeli'=>  'MoviesController#EditarPelicula'
+      'editpeli'=>  'MoviesController#EditarPelicula',
+      'mostrarparaeditargenero'=>
     ];
   }
 ?>

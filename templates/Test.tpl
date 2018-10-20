@@ -38,7 +38,7 @@
           <input type="number" class="form-control" placeholder="Duración"id="Duracion"name="Duracion" value="">
           <select class="form-control" id="genero"  name="genero">
                      {foreach from=$Generos item=gen}
-                     <option class="dropdown-item" value="{$gen['id_genero']}" name="categoria">{$gen['id_genero']}</a>
+                     <option class="dropdown-item" value="{$gen['id_genero']}" name="categoria">{$gen['nombre']}</a>
                        {/foreach}
                    </select>
         </section>
@@ -66,6 +66,7 @@
           <th scope="row">{$gen['nombre']}</th>
           <th scope="row">{$gen['cantidad_peliculas']}</th>
           <th><a href="borrargenero/{$gen['id_genero']}">BORRAR</a></th>
+          <th><a href="mostrarparaeditargenero/{$gen['id_genero']}">Editar</a></th>
         </tr>
         {/foreach}
       </tbody>
