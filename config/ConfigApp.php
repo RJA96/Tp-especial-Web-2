@@ -19,8 +19,8 @@
       'Logout'=>'MoviesController#Logout',
       'Registrar'=>'MoviesController#Registrar',
       'Sugerencias'=>'MoviesController#Sugerencias',
-      'PDO'=>'MoviesController#MostrarPDO',
-      //PDO-Pelicula
+      'PDO'=>'MoviesController#MostrarPDOGeneros',
+      'PDO-Pelicula'=>'MoviesController#MostrarPDOPeliculas',
       'borrarpelicula'=> 'MoviesController#BorrarPeli',
       'agregar_pelicula'=> 'MoviesController#InsertarPelicula',
       'mostrarparaeditarpelicula'=> 'MoviesController#MostrarPDOeditpelicula',
@@ -28,6 +28,7 @@
       'borrargenero'=> 'MoviesController#BorrarGenero',
       'agregar_genero'=> 'MoviesController#InsertarGenero',
       'mostrarparaeditargenero'=>'MoviesController#MostrarPDOeditgenero',
+      'mostrarpeliculasporgenero'=>'MoviesController#MostrarPDOPeliculasporGenero',
       'editargenero'=>'MoviesController#EditarGenero',
     ];
   }

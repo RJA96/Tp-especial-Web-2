@@ -5,9 +5,16 @@ require_once ('libs/Smarty.class.php');
  */
 class MoviesView{
 
-  function MostrarTabla($Peliculas, $Generos){
+  function MostrarPeliculas($Peliculas, $Generos){
     $smarty = new Smarty();
     $smarty->assign('Peliculas',$Peliculas);
+    $smarty->assign('Generos',$Generos);
+    $smarty->display('templates/Peliculas-PDO.tpl');
+  }
+
+  function MostrarGeneros($Generos){
+    $smarty = new Smarty();
+
     $smarty->assign('Generos',$Generos);
     $smarty->display('templates/Generos-PDO.tpl');
   }
