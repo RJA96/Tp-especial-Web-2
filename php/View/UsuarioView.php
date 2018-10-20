@@ -6,7 +6,7 @@ require_once ('libs/Smarty.class.php');
 class UsuarioView
 {
 
-  function Mostrar($Titulo, $Usuarios){
+  function Mostrar($Usuarios){
     $smarty = new Smarty();
     $smarty->assign('Usuarios',$Usuarios);
     //$smarty->debugging = true;

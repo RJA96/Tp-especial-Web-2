@@ -25,12 +25,11 @@ class UsuarioController extends SecuredController
 
 
   function InsertUsuario(){
-    $nombre = $_POST["nombre"];
+    $nombre = $_POST["usuario"];
     $email = $_POST["email"];
-    $clave = $_POST["pass"];
+    $clave = password_hash($_POST["pass"], PASSWORD_DEFAULT);
     $this->model->InsertarUsuario($nombre,$email,$clave);
 
-    header("Location: http://".$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
   }
 
 }

@@ -1,5 +1,6 @@
 {include file="Header.tpl"}
 
+{if $user != null}
 
      <div class="container use-ajax">
        <article class="row mt-2 mb-2">
@@ -644,5 +645,12 @@
        </article>
      </div>
 
+{else}
+<article class="row">
+    <section class="mt-5 text-center col-12">
+        <p>Para ver todo el contenido de esta pagina lo invitamos a logearse en ella, si no esta registrado puede hacerlo <a class="" href="Login">Aqui</a></p>
+    </section>
+</article>
+{/if}
 
 {include file="Footer.tpl"}

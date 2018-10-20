@@ -9,8 +9,9 @@ class PaginaView{
     $smarty = new Smarty();
     $smarty->display('templates/home.tpl');
   }
-  function AllMovies(){
+  function AllMovies($user){
     $smarty = new Smarty();
+    $smarty->assign('user',$user);
     $smarty->display('templates/AllMovies.tpl');
   }
   function Contacto(){

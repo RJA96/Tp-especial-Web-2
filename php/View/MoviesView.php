@@ -12,9 +12,9 @@ class MoviesView{
     $smarty->display('templates/Peliculas-PDO.tpl');
   }
 
-  function MostrarGeneros($Generos){
+  function MostrarGeneros($Generos, $user){
     $smarty = new Smarty();
-
+    $smarty->assign('user',$user);
     $smarty->assign('Generos',$Generos);
     $smarty->display('templates/Generos-PDO.tpl');
   }

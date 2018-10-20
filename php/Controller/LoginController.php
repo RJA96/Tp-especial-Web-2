@@ -8,13 +8,11 @@ class LoginController
 {
   private $view;
   private $model;
-  private $Titulo;
 
   function __construct()
   {
     $this->view = new LoginView();
     $this->model = new UsuarioModel();
-    $this->Titulo = "Login";
   }
 
   function login(){
@@ -32,10 +30,10 @@ class LoginController
   function verificarLogin(){
       $user = $_POST["usuarioId"];
       $clave = $_POST["passwordId"];
-      $dbUser = $this->model->getUser($user);
+      $db_User = $this->model->getUser($user);
 
-      if(isset($dbUser)){
-          if (password_verify($pass, $dbUser[0]["pass"])){
+      if(isset($db_User)){
+          if (password_verify($clave, $db_User[0]['clave'])){
               session_start();
               $_SESSION["User"] = $user;
               header(HOME);

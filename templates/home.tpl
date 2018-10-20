@@ -1,4 +1,6 @@
+
 {include file="Header.tpl"}
+
 
 <div class="container use-ajax">
     <div class="row">
@@ -40,5 +42,6 @@
         </section>
     </article>
 </div>
+
 
 {include file="Footer.tpl"}

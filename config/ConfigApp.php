@@ -31,6 +31,8 @@
       'mostrarpeliculasporgenero'=>'MoviesController#MostrarPDOPeliculasporGenero',
       'editargenero'=>'MoviesController#EditarGenero',
       'verificarLogin'=>'LoginController#verificarLogin',
+      'CrearUsuario'=>'UsuarioController#InsertUsuario',
+      'Usuarios'=>'UsuarioController#MostrarUsuario'
     ];
   }
 ?>
