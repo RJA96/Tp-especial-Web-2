@@ -1,8 +1,8 @@
 {include file="Header.tpl"}
 <div class="container use-ajax">
      <article class="row">
-       <section class="col-12">
-         <form>
+       <section class="col-6 mx-auto">
+         <form method="post" action="verificarLogin">
            <section class="mt-5 form-group">
              <label>Usuario</label>
              <input type="text" class="form-control" name="usuarioId" id="usuarioId" placeholder="Usuario">
@@ -18,7 +18,7 @@
        </section>
      </article>
      <article class="row">
-       <section class="col-12">
+       <section class="col-6 mx-auto">
          <a class="registrarse" href="Registrar" class="">Registrarse</a>
        </section>
      </article>

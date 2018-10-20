@@ -30,6 +30,7 @@
       'mostrarparaeditargenero'=>'MoviesController#MostrarPDOeditgenero',
       'mostrarpeliculasporgenero'=>'MoviesController#MostrarPDOPeliculasporGenero',
       'editargenero'=>'MoviesController#EditarGenero',
+      'verificarLogin'=>'LoginController#verificarLogin',
     ];
   }
 ?>

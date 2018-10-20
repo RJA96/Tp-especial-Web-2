@@ -1,5 +1,5 @@
 {include file="Header.tpl"}
-  <section class="col-12">
+  <section class="mx-auto mt-2 col-8">
     <table class="table table-striped table-dark">
       <thead>
         <tr>
@@ -32,7 +32,7 @@
     </table>
   </section>
   <article class="row">
-    <section class="col-12 mb-2">
+    <section class="mx-auto col-6 mb-2">
       <form method="post" action="agregar_pelicula">
         <section class="mt-2 form-group">
           <input type="text" class="form-control" placeholder="Nombre"id="Nombre_peli"name="Nombre_peli" value="">

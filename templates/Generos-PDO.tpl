@@ -2,7 +2,7 @@
 
 
 
-  <section class="col-6">
+  <section class="mx-auto mt-2 col-8">
     <table class="table table-dark">
       <thead>
         <tr>
@@ -28,7 +28,7 @@
   </section>
 
   <article class="row">
-    <section class="col-12 mb-2">
+    <section class="mx-auto col-6 mb-2">
       <form method="post" action="agregar_genero">
         <section class="mt-2 form-group">
           <input type="text" class="form-control" id="Nombre" placeholder="Nombre"name="Nombre" value="">
