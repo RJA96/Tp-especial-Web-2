@@ -71,24 +71,24 @@ class MoviesController extends SecuredController{
     $nombre = $_POST["Nombre"];
     $cantpeliculas = $_POST["cantidad_peliculas"];
     $this->modelgeneros->InsertarGenero($nombre, $cantpeliculas);
-    $this->MostrarPDO();
+    $this->MostrarPDOGeneros();
 }
 function EditarGenero(){
   $id_genero = $_POST["id_genero"];
   $nombre = $_POST["Nombre"];
   $cantpeliculas = $_POST["cantidad_peliculas"];
   $this->modelgeneros->EditarGenero($id_genero, $nombre, $cantpeliculas);
-  $this->MostrarPDO();
+  $this->MostrarPDOGeneros();
 }
 
   function BorrarGenero($param){
     $this->modelgeneros->BorrarGenero($param[0]);
-    $this->MostrarPDO();
+    $this->MostrarPDOGeneros();
   }
 
   function BorrarPeli($param){
     $this->modelpeliculas->BorrarPeli($param[0]);
-    $this->MostrarPDO();
+    $this->MostrarPDOPeliculas();
   }
 
 function InsertarPelicula(){
@@ -98,7 +98,7 @@ function InsertarPelicula(){
   $Duracion = $_POST["Duracion"];
   $genero = $_POST["genero"];
   $this->modelpeliculas->InsertarPelicula($nombre, $Año, $Valoracion ,$Duracion ,$genero);
-  $this->MostrarPDO();
+  $this->MostrarPDOPeliculas();
 }
 
 function EditarPelicula(){
@@ -109,7 +109,7 @@ function EditarPelicula(){
   $genero = $_POST["genero"];
   $id_peli = $_POST["id_peli"];
   $this->modelpeliculas->EditarPelicula($nombre, $Año, $Valoracion ,$Duracion ,$genero,$id_peli);
-  $this->MostrarPDO();
+  $this->MostrarPDOPeliculas();
 }
 
 }

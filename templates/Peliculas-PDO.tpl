@@ -19,7 +19,11 @@
           <th scope="row">{$peli['año']}</th>
           <th scope="row">{$peli['valoracion']}</th>
           <th scope="row">{$peli['duracion']}</th>
-          <th scope="row">{$peli['id_genero']}</th>
+          {foreach from=$Generos item=gen}
+            {if $peli['id_genero'] == $gen['id_genero']}
+              <th scope="row">{$gen['nombre_genero']}</th>
+            {/if}
+          {/foreach}
           <th><a href="borrarpelicula/{$peli['id_peliculas']}">Borrar</a></th>
           <th><a href="mostrarparaeditarpelicula/{$peli['id_peliculas']}">Editar</a></th>
         </tr>
@@ -37,7 +41,7 @@
           <input type="number" class="form-control" placeholder="Duración"id="Duracion"name="Duracion" value="">
           <select class="form-control" id="genero"  name="genero">
                      {foreach from=$Generos item=gen}
-                     <option class="dropdown-item" value="{$gen['id_genero']}" name="categoria">{$gen['nombre']}</a>
+                     <option class="dropdown-item" value="{$gen['id_genero']}" name="categoria">{$gen['nombre_genero']}</a>
                        {/foreach}
                    </select>
         </section>

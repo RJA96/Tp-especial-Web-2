@@ -16,7 +16,7 @@
       <tbody>
         {foreach from=$Generos item=gen}
         <tr>
-          <th scope="row">{$gen['nombre']}</th>
+          <th scope="row">{$gen['nombre_genero']}</th>
           <th scope="row">{$gen['cantidad_peliculas']}</th>
           <th><a href="borrargenero/{$gen['id_genero']}">Borrar</a></th>
           <th><a href="mostrarparaeditargenero/{$gen['id_genero']}">Editar</a></th>

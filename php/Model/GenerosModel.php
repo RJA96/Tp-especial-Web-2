@@ -26,11 +26,11 @@ class GenerosModel
     return $sentencia->fetch(PDO::FETCH_ASSOC);
   }
   function InsertarGenero($nombre, $cantidad){
-    $sentencia = $this->db->prepare("INSERT INTO genero(nombre, cantidad_peliculas) VALUES(?,?)");
+    $sentencia = $this->db->prepare("INSERT INTO genero(nombre_genero, cantidad_peliculas) VALUES(?,?)");
     $sentencia->execute(array($nombre, $cantidad));
   }
   function EditarGenero($id_genero, $nombre, $cantidad){
-    $sentencia = $this->db->prepare("UPDATE genero SET nombre=?, cantidad_peliculas=? WHERE id_genero=?");
+    $sentencia = $this->db->prepare("UPDATE genero SET nombre_genero=?, cantidad_peliculas=? WHERE id_genero=?");
     $sentencia->execute(array($nombre, $cantidad, $id_genero));
   }
 
