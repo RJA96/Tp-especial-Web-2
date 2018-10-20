@@ -8,8 +8,10 @@
           <th scope="col">Valoracion</th>
           <th scope="col">Duracion</th>
           <th scope="col">Genero</th>
+          {if $user != null}
           <th scope="col">Borrar</th>
           <th scope="col">Editar</th>
+          {/if}
         </tr>
       </thead>
       <tbody>
@@ -24,13 +26,16 @@
               <th scope="row">{$gen['nombre_genero']}</th>
             {/if}
           {/foreach}
+          {if $user != null}
           <th><a href="borrarpelicula/{$peli['id_peliculas']}">Borrar</a></th>
           <th><a href="mostrarparaeditarpelicula/{$peli['id_peliculas']}">Editar</a></th>
+          {/if}
         </tr>
         {/foreach}
       </tbody>
     </table>
   </section>
+{if $user != null}
   <article class="row">
     <section class="mx-auto col-6 mb-2">
       <form method="post" action="agregar_pelicula">
@@ -52,6 +57,7 @@
       </form>
     </section>
   </article>
+{/if}
 
 
 {include file="Footer.tpl"}

@@ -62,10 +62,16 @@ class MoviesController extends SecuredController{
   }
 
   function MostrarPDOPeliculas(){
-
-    $Peliculas = $this->modelpeliculas->getPeliculas();
-    $Generos = $this->modelgeneros->getGenero();
-    $this->viewPDO->MostrarPeliculas($Peliculas, $Generos);
+    if(isset($_SESSION["User"])){
+      $user = $_SESSION["User"];
+      $Peliculas = $this->modelpeliculas->getPeliculas();
+      $Generos = $this->modelgeneros->getGenero();
+      $this->viewPDO->MostrarPeliculas($Peliculas, $Generos, $user);
+    }else{
+      $Peliculas = $this->modelpeliculas->getPeliculas();
+      $Generos = $this->modelgeneros->getGenero();
+      $this->viewPDO->MostrarPeliculas($Peliculas, $Generos, "");
+    }
   }
   function MostrarPDOPeliculasporGenero($Genero){
     $Peliculas = $this->modelpeliculas->getPeliculasporGenero($Genero[0]);

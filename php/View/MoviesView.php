@@ -5,8 +5,9 @@ require_once ('libs/Smarty.class.php');
  */
 class MoviesView{
 
-  function MostrarPeliculas($Peliculas, $Generos){
+  function MostrarPeliculas($Peliculas, $Generos, $user){
     $smarty = new Smarty();
+    $smarty->assign('user',$user);
     $smarty->assign('Peliculas',$Peliculas);
     $smarty->assign('Generos',$Generos);
     $smarty->display('templates/Peliculas-PDO.tpl');
