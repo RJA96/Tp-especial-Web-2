@@ -21,11 +21,6 @@ class MoviesController extends SecuredController{
     $this->modelgeneros = new GenerosModel();
   }
 
-//  if(isset($_SESSION["User"])){
-  //  $user = $_SESSION["User"];
-  //  $this->viewpagina->Home($user);
-  //}else{
-  //  $this->Login();
   function Home(){
     if(isset($_SESSION["User"])){
       $user = $_SESSION["User"];
