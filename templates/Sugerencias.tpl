@@ -43,7 +43,7 @@
      {else}
      <article class="row">
          <section class="mt-5 text-center col-12">
-             <p>Para poder comunicarse debe estar registrado, puede registrarse <a class="" href="Login">Aqui</a></p>
+             <p>Para poder enviar sus segerencias debe estar registrado, puede registrarse <a class="" href="Login">Aqui</a></p>
          </section>
      </article>
      {/if}

@@ -36,9 +36,11 @@ class GenerosModel
 
 
   function BorrarGenero($id_genero){
-
+  $sentencia = $this->db->prepare( "DELETE from pelicula where id_genero=?");
+  $sentencia->execute(array($id_genero));
   $sentencia = $this->db->prepare( "DELETE from genero where id_genero=?");
   $sentencia->execute(array($id_genero));
+
   }
 }
 ?>
