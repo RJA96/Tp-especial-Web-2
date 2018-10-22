@@ -6,12 +6,13 @@ require_once ('libs/Smarty.class.php');
 class UsuarioView
 {
 
-  function Mostrar($Usuarios){
+  function Home($user){
     $smarty = new Smarty();
-    $smarty->assign('Usuarios',$Usuarios);
-    //$smarty->debugging = true;
-    $smarty->display('templates/Usuarios.tpl');
+    $smarty->assign('user',$user);
+    $smarty->display('templates/home.tpl');
   }
+
+
 }
 
  ?>
