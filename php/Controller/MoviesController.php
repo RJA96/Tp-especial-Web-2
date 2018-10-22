@@ -1,8 +1,8 @@
 <?php
-require_once  "php\View\MoviesView.php";
-require_once  "php\View\PaginaView.php";
-require_once  "php\Model\MoviesModel.php";
-require_once  "php\Model\GenerosModel.php";
+require_once  "php/View/MoviesView.php";
+require_once  "php/View/PaginaView.php";
+require_once  "php/Model/MoviesModel.php";
+require_once  "php/Model/GenerosModel.php";
 require_once "SecuredController.php";
 
 

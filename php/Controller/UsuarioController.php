@@ -1,7 +1,7 @@
 <?php
-require_once  "php\View\UsuarioView.php";
-require_once  "php\Model\UsuarioModel.php";
-require_once  "php\Controller\SecuredController.php";
+require_once  "php/View/UsuarioView.php";
+require_once  "php/Model/UsuarioModel.php";
+require_once  "php/Controller/SecuredController.php";
 
 class UsuarioController extends SecuredController
 {

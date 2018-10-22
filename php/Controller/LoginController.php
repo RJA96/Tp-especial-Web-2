@@ -1,7 +1,7 @@
 <?php
 
-require_once  "php\View\LoginView.php";
-require_once  "php\Model\UsuarioModel.php";
+require_once  "php/View/LoginView.php";
+require_once  "php/Model/UsuarioModel.php";
 
 
 class LoginController
