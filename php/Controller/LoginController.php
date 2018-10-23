@@ -24,7 +24,7 @@ class LoginController
   function logout(){
     session_start();
     session_destroy();
-    header(LOGIN);
+    header(HOME);
   }
 
   function verificarLogin(){

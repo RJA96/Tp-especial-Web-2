@@ -20,7 +20,6 @@
             <a class="nav-item nav-link all-movies" href="AllMovies">Todas las peliculas</a>
             <a class="nav-item nav-link sugerencias" href="Sugerencias">Sugerencias</a>
             <a class="nav-item nav-link contacto" href="Contacto">Contacto</a>
-            <a class="nav-item nav-link login" href="Login">Login</a>
             <a class="nav-item nav-link pdo" href="PDO">Generos-PDO</a>
             <a class="nav-item nav-link pdo" href="PDO-Pelicula">Peliculas-PDO</a>
             <a class="nav-item nav-link pdo" href="Logout">Logout</a>

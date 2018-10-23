@@ -29,7 +29,7 @@ class UsuarioController extends SecuredController
     $email = $_POST["email"];
     $clave = password_hash($_POST["pass"], PASSWORD_DEFAULT);
     $this->model->InsertarUsuario($nombre,$email,$clave);
-    $this->view->Home("");
+    header(HOME);
 
   }
 

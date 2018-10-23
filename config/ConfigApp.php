@@ -1,11 +1,8 @@
 <?php
-  define('HOME', 'Location: home');
-  define('CONTACTO', 'Location: Contacto');
-  define('ALLMOVIES', 'Location: AllMovies');
-  define('LOGIN', 'Location: Login');
-  define('REGISTRAR', 'Location: Registrar');
-  define('LOGOUT', 'Location: Logout');
-  define('SUGERENCIAS', 'Location: Sugerencias');
+  define('HOME', 'Location: //'.$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]). '/Home');
+  define('LOGIN', 'Location: //'.$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]). '/Login');
+  define('PDO', 'Location: //'.$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]). '/PDO');
+  define('PDOPELICULA', 'Location://'.$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]). '/PDO-Pelicula');
 
   class ConfigApp{
     public static $ACTION = 'action';
