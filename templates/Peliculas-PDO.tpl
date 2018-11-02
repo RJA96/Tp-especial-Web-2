@@ -13,6 +13,7 @@
           <th scope="col">Duracion</th>
           <th scope="col">Genero</th>
           {if $user != null}
+          <th scope="col">Comentarios</th>
           <th scope="col">Borrar</th>
           <th scope="col">Editar</th>
           {/if}
@@ -27,12 +28,15 @@
           <th scope="row">{$peli['duracion']}</th>
           {foreach from=$Generos item=gen}
             {if $peli['id_genero'] == $gen['id_genero']}
-              <th scope="row">{$gen['nombre_genero']}</th>
+              <th scope="row"><a href="mostrarpeliculasporgenero/{$gen['id_genero']}">{$gen['nombre_genero']}</a></th>
             {/if}
           {/foreach}
           {if $user != null}
+          <th><a href="vercomentarios/{$peli['id_peliculas']}">Comentarios</a></th>
+          {if $user == "1"}
           <th><a href="borrarpelicula/{$peli['id_peliculas']}">Borrar</a></th>
           <th><a href="mostrarparaeditarpelicula/{$peli['id_peliculas']}">Editar</a></th>
+          {/if}
           {/if}
         </tr>
         {/foreach}
@@ -40,6 +44,7 @@
     </table>
   </section>
 {if $user != null}
+{if $user == "1"}
   <article class="row">
     <section class="mx-auto col-6 mb-2">
       <form method="post" action="agregar_pelicula">
@@ -61,6 +66,7 @@
       </form>
     </section>
   </article>
+{/if}
 {/if}
 
 

@@ -13,8 +13,10 @@
           <th scope="col">Nombre</th>
           <th scope="col">Cantidad de Peliculas</th>
           {if $user != null}
-          <th scope="col">Borrar</th>
-          <th scope="col">Editar</th>
+            {if $user == "1"}
+              <th scope="col">Borrar</th>
+              <th scope="col">Editar</th>
+            {/if}
           {/if}
           <th scope="col">Ver Peliculas</th>
         </tr>
@@ -25,8 +27,10 @@
           <th scope="row">{$gen['nombre_genero']}</th>
           <th scope="row">{$gen['cantidad_peliculas']}</th>
           {if $user != null}
-          <th><a href="borrargenero/{$gen['id_genero']}">Borrar</a></th>
-          <th><a href="mostrarparaeditargenero/{$gen['id_genero']}">Editar</a></th>
+            {if $user == "1"}
+              <th><a href="borrargenero/{$gen['id_genero']}">Borrar</a></th>
+             <th><a href="mostrarparaeditargenero/{$gen['id_genero']}">Editar</a></th>
+            {/if}
           {/if}
           <th><a href="mostrarpeliculasporgenero/{$gen['id_genero']}">Ver Peliculas</a></th>
         </tr>

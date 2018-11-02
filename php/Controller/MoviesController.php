@@ -3,6 +3,7 @@ require_once  "php/View/MoviesView.php";
 require_once  "php/View/PaginaView.php";
 require_once  "php/Model/MoviesModel.php";
 require_once  "php/Model/GenerosModel.php";
+require_once  "php/Model/UsuarioModel.php";
 require_once "SecuredController.php";
 
 
@@ -11,7 +12,7 @@ class MoviesController extends SecuredController{
   private $viewPDO;
   private $modelpeliculas;
   private $modelgeneros;
-
+  private $modelusuarios;
 
   function __construct(){
     parent::__construct();
@@ -19,6 +20,8 @@ class MoviesController extends SecuredController{
     $this->modelpeliculas = new MoviesModel();
     $this->viewPDO = new MoviesView();
     $this->modelgeneros = new GenerosModel();
+    $this->modelusuarios = new UsuarioModel();
+
   }
 
   function Home(){
@@ -94,9 +97,16 @@ class MoviesController extends SecuredController{
     }
   }
   function MostrarPDOPeliculasporGenero($Genero){
-    $Peliculas = $this->modelpeliculas->getPeliculasporGenero($Genero[0]);
-    $Generos = $this->modelgeneros->getGenero();
-    $this->viewPDO->MostrarPeliculas($Peliculas, $Generos,"");
+    if(isset($_SESSION["User"])){
+      $user = $_SESSION["User"];
+      $Peliculas = $this->modelpeliculas->getPeliculasporGenero($Genero[0]);
+      $Generos = $this->modelgeneros->getGenero();
+      $this->viewPDO->MostrarPeliculas($Peliculas, $Generos,$user);
+    }else{
+      $Peliculas = $this->modelpeliculas->getPeliculasporGenero($Genero[0]);
+      $Generos = $this->modelgeneros->getGenero();
+      $this->viewPDO->MostrarPeliculas($Peliculas, $Generos,"");
+    }
   }
 
   function MostrarPDOeditpelicula($param){
@@ -121,21 +131,26 @@ class MoviesController extends SecuredController{
   }
 
   function InsertarGenero(){
-    $nombre = $_POST["Nombre"];
-    $cantpeliculas = $_POST["cantidad_peliculas"];
-    $this->modelgeneros->InsertarGenero($nombre, $cantpeliculas);
-    header(PDO);
+    if(isset($_SESSION["User"])){
+      $user = $_SESSION["User"];
+      $nombre = $_POST["Nombre"];
+      $cantpeliculas = $_POST["cantidad_peliculas"];
+      $this->modelgeneros->InsertarGenero($nombre, $cantpeliculas);
+      header(PDO);
+    }else{
+      header(LOGIN);
+    }
 }
 function EditarGenero(){
   if(isset($_SESSION["User"])){
-    $user = $_SESSION["User"];
-  $id_genero = $_POST["id_genero"];
-  $nombre = $_POST["Nombre"];
-  $cantpeliculas = $_POST["cantidad_peliculas"];
-  $this->modelgeneros->EditarGenero($id_genero, $nombre, $cantpeliculas);
-  header(PDO);
+   $user = $_SESSION["User"];
+   $id_genero = $_POST["id_genero"];
+   $nombre = $_POST["Nombre"];
+   $cantpeliculas = $_POST["cantidad_peliculas"];
+   $this->modelgeneros->EditarGenero($id_genero, $nombre, $cantpeliculas);
+   header(PDO);
   }else{
-    header(LOGIN);
+   header(LOGIN);
   }
 }
 
@@ -188,7 +203,16 @@ function EditarPelicula(){
   }else{
     header(LOGIN);
   }
+}
 
+function Admin(){
+  if(isset($_SESSION["User"])){
+    $user = $_SESSION["User"];
+    $usuarios = $this->modelusuarios->GetUsuario();
+    $this->viewpagina->Mostraradmin($user, $usuarios);
+  }else{
+    header(LOGIN);;
+  }
 }
 }
 

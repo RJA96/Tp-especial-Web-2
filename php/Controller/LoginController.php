@@ -35,7 +35,7 @@ class LoginController
       if((isset($db_User))&&($user!=null)){
           if (password_verify($clave, $db_User[0]['clave'])){
               session_start();
-              $_SESSION["User"] = $user;
+              $_SESSION["User"] = $db_User[0]['admin'];
               header(HOME);
           }else{
             $this->view->mostrarLogin("");

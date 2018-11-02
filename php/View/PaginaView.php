@@ -36,6 +36,12 @@ class PaginaView{
     $smarty->display('templates/Sugerencias.tpl');
   }
 
+  function MostrarAdmin ($user, $usuarios){
+    $smarty = new Smarty();
+    $smarty->assign('user',$user);
+    $smarty->assign('usuarios',$usuarios);
+    $smarty->display('templates/Admin.tpl');
+  }
 
 
 }
