@@ -45,7 +45,7 @@ class GenerosApiController extends Api{
   function InsertGenero($param = null){
 
     $objetoJson = $this->getJSONData();
-    $r = $this->model->InsertarGenero($objetoJson->nombre, $objetoJson->cantidad);
+    $r = $this->model->InsertarGenero($objetoJson->nombre_genero, $objetoJson->cantidad_peliculas);
 
     return $this->json_response($r, 200);
   }
@@ -54,7 +54,7 @@ class GenerosApiController extends Api{
     if(count($param) == 1){
       $id_genero = $param[0];
       $objetoJson = $this->getJSONData();
-      $r = $this->model->EditarGenero($id_genero, $objetoJson->nombre,$objetoJson->cantidad);
+      $r = $this->model->EditarGenero($id_genero, $objetoJson->nombre_genero,$objetoJson->cantidad_peliculas);
       return $this->json_response($r, 200);
 
     }else{
