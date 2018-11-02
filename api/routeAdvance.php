@@ -3,6 +3,7 @@
 
 require_once "config/ConfigApi.php";
 require_once "controller/GenerosApiController.php";
+require_once "controller/PeliculasApiController.php";
 
 function parseURL($url)
 {
