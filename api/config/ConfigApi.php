@@ -8,7 +8,11 @@ class ConfigApi
       'genero#GET'=> 'GenerosApiController#GetGenero',
       'genero#DELETE'=> 'GenerosApiController#DeleteGenero',
       'genero#POST'=> 'GenerosApiController#InsertGenero',
-      'genero#PUT'=> 'UpdateGenero#UpdateTarea'
+      'genero#PUT'=> 'UpdateGenero#UpdateTarea',
+      'pelicula#GET'=> 'PeliculasApiController#GetPelicula',
+      'pelicula#DELETE'=> 'PeliculasApiController#DeletePelicula',
+      'pelicula#POST'=> 'PeliculasApiController#InsertPelicula',
+      'pelicula#PUT'=> 'PeliculasApiController#UpdatePelicula'
     ];
 
 }

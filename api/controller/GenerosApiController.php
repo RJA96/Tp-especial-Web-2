@@ -54,7 +54,7 @@ class GenerosApiController extends Api{
     if(count($param) == 1){
       $id_genero = $param[0];
       $objetoJson = $this->getJSONData();
-      $r = $this->model->EditarGenero($id_genero, $objetoJson->nombre);
+      $r = $this->model->EditarGenero($id_genero, $objetoJson->nombre,$objetoJson->cantidad);
       return $this->json_response($r, 200);
 
     }else{
