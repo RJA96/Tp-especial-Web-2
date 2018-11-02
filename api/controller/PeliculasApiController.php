@@ -45,7 +45,7 @@ class PeliculasApiController extends Api{
   function InsertPelicula($param = null){
 
     $objetoJson = $this->getJSONData();
-    $r = $this->model->InsertarPelicula($objetoJson->nombre, $objetoJson->año, $objetoJson->valoracion, $objetoJson->duracion, $objetoJson->genero);
+    $r = $this->model->InsertarPelicula($objetoJson->nombre, $objetoJson->año, $objetoJson->valoracion, $objetoJson->duracion, $objetoJson->id_genero);
     return $this->json_response($r, 200);
   }
 
@@ -53,7 +53,7 @@ class PeliculasApiController extends Api{
     if(count($param) == 1){
       $id_pelicula = $param[0];
       $objetoJson = $this->getJSONData();
-      $r = $this->model->EditarPelicula($objetoJson->nombre, $objetoJson->año, $objetoJson->valoracion, $objetoJson->duracion, $objetoJson->genero, $id_pelicula);
+      $r = $this->model->EditarPelicula($objetoJson->nombre, $objetoJson->año, $objetoJson->valoracion, $objetoJson->duracion, $objetoJson->id_genero, $id_pelicula);
       return $this->json_response($r, 200);
 
     }else{
