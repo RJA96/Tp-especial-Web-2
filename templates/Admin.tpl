@@ -17,7 +17,7 @@
           <tr>
             <th scope="row">{$usu['usuario']}</th>
             <th scope="row">{$usu['email']}</th>
-              {if $usu['admin']==1}
+              {if $usu['admin']==0}
             <th><a href="volveradmin/{$usu['id_usuario']}">Volveradmin</a></th>
              {else}
             <th><a href="quitaradmin/{$usu['id_usuario']}">Quitaradmin</a></th>
