@@ -12,6 +12,14 @@ class ComentariosModel{
     .'dbname=db_movies;charset=utf8'
     , 'root', '');
   }
+  
+  
+  function GetComentariosAll(){
+    $sentencia = $this->db->prepare( "SELECT * FROM comentario");
+    $sentencia->execute();
+    return $sentencia->fetchall(PDO::FETCH_ASSOC);
+  }
+
 
   function GetComentariosPelicula($id){
     $sentencia = $this->db->prepare( "SELECT * FROM comentario WHERE id_pelicula=?");
