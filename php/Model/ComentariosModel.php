@@ -16,7 +16,17 @@ class ComentariosModel{
   function GetComentariosPelicula($id){
     $sentencia = $this->db->prepare( "SELECT * FROM comentario WHERE id_pelicula=?");
     $sentencia->execute(array($id));
-    return $sentencia->fetch(PDO::FETCH_ASSOC);
+    return $sentencia->fetchall(PDO::FETCH_ASSOC);
+  }
+
+  function InsertarComentario($coment,$idpelicula, $idusuario){
+    $sentencia = $this->db->prepare("INSERT INTO comentario(coment, id_pelicula, id_usuario) VALUES(?,?,?)");
+    $sentencia->execute(array($coment,$idpelicula, $idusuario));
+  }
+
+  function BorrarComentario($id){
+    $sentencia = $this->db->prepare( "DELETE from comentario where id_comentario=?");
+    $sentencia->execute(array($id));
   }
 }
 ?>
