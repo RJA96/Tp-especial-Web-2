@@ -12,10 +12,12 @@
           <th scope="col">Valoracion</th>
           <th scope="col">Duracion</th>
           <th scope="col">Genero</th>
-          {if $user != null}
           <th scope="col">Comentarios</th>
+          {if $user != null}
+          {if $admin == "1"}
           <th scope="col">Borrar</th>
           <th scope="col">Editar</th>
+          {/if}
           {/if}
         </tr>
       </thead>
@@ -31,8 +33,8 @@
               <th scope="row"><a href="mostrarpeliculasporgenero/{$gen['id_genero']}">{$gen['nombre_genero']}</a></th>
             {/if}
           {/foreach}
-          {if $user != null}
           <th><a href="vercomentarios/{$peli['id_peliculas']}">Comentarios</a></th>
+          {if $user != null}
           {if $admin == "1"}
           <th><a href="borrarpelicula/{$peli['id_peliculas']}">Borrar</a></th>
           <th><a href="mostrarparaeditarpelicula/{$peli['id_peliculas']}">Editar</a></th>

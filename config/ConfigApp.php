@@ -3,7 +3,7 @@
   define('LOGIN', 'Location: //'.$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]). '/Login');
   define('PDO', 'Location: //'.$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]). '/PDO');
   define('PDOPELICULA', 'Location://'.$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]). '/PDO-Pelicula');
-
+  define('ADMIN', 'Location://'.$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]). '/Admin');
   class ConfigApp{
     public static $ACTION = 'action';
     public static $PARAMS = 'params';
@@ -30,7 +30,10 @@
       'verificarLogin'=>'LoginController#verificarLogin',
       'CrearUsuario'=>'UsuarioController#InsertUsuario',
       'Usuarios'=>'UsuarioController#MostrarUsuario',
-      'Admin'=>'MoviesController#Admin'
+      'Admin'=>'MoviesController#Admin',
+      'volveradmin'=>'MoviesController#VolverAdmin',
+      'quitaradmin'=>'MoviesController#QuitarAdmin',
+      'vercomentarios'=>'MoviesController#VerComentarios'
     ];
   }
 ?>

@@ -39,13 +39,21 @@ class LoginController
               $_SESSION["Admin"] = $db_User[0]['admin'];
               header(HOME);
           }else{
-            $this->view->mostrarLogin("");
+            header(LOGIN);
 
           }
       }else{
 
-        $this->view->mostrarLogin("");
+        header(LOGIN);
       }
+  }
+
+  function LogearReg($user){
+    $db_User = $this->model->getUser($user[0]);
+    session_start();
+     $_SESSION["User"] = $user[0];
+     $_SESSION["Admin"] = $db_User[0]['admin'];
+      header(HOME);
 
   }
 

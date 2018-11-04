@@ -21,20 +21,25 @@ class UsuarioModel
       return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
 
-
-
   function InsertarUsuario($nombre,$email, $clave){
-
     $sentencia = $this->db->prepare("INSERT INTO usuario(usuario,email, clave) VALUES(?,?,?)");
     $sentencia->execute(array($nombre,$email, $clave));
   }
 
   function GetUser($user){
-
       $sentencia = $this->db->prepare( "SELECT * FROM usuario WHERE usuario=? LIMIT 1");
       $sentencia->execute(array($user));
       return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
 
+  function DarAdmin($user){
+    $sentencia = $this->db->prepare( "UPDATE usuario SET admin=1 WHERE id_usuario=? LIMIT 1");
+    $sentencia->execute(array($user));
+  }
+
+  function QuitarAdmin($user){
+    $sentencia = $this->db->prepare( "UPDATE usuario SET admin=0 WHERE id_usuario=? LIMIT 1");
+    $sentencia->execute(array($user));
+  }
 }
 ?>

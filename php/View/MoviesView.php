@@ -38,5 +38,13 @@ class MoviesView{
     $smarty->assign('Generos',$Generos);
     $smarty->display('templates/EditarGenero.tpl');
   }
+
+  function MostrarComentarios($user,$admin,$comentarios){
+    $smarty = new Smarty();
+    $smarty->assign('user',$user);
+    $smarty->assign('admin',$admin);
+    $smarty->assign('comentarios',$comentarios);
+    $smarty->display('templates/Comentarios.tpl');
+  }
 }
 ?>

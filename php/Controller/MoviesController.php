@@ -119,7 +119,7 @@ class MoviesController extends SecuredController{
   }
 
   function MostrarPDOeditpelicula($param){
-    if(isset($_SESSION["User"])){
+    if((isset($_SESSION["User"])&&($_SESSION["Admin"]==1))){
       $user = $_SESSION["User"];
       $admin = $_SESSION["Admin"];
       $Pelicula = $this->modelpeliculas->getPelicula($param[0]);
@@ -131,7 +131,7 @@ class MoviesController extends SecuredController{
   }
 
   function MostrarPDOeditgenero($param){
-    if(isset($_SESSION["User"])){
+    if((isset($_SESSION["User"])&&($_SESSION["Admin"]==1))){
       $user = $_SESSION["User"];
       $admin = $_SESSION["Admin"];
     $Generos = $this->modelgeneros->getGeneroID($param[0]);
@@ -142,7 +142,7 @@ class MoviesController extends SecuredController{
   }
 
   function InsertarGenero(){
-    if(isset($_SESSION["User"])){
+    if((isset($_SESSION["User"])&&($_SESSION["Admin"]==1))){
       $user = $_SESSION["User"];
       $admin = $_SESSION["Admin"];
       $nombre = $_POST["Nombre"];
@@ -154,7 +154,7 @@ class MoviesController extends SecuredController{
     }
 }
 function EditarGenero(){
-  if(isset($_SESSION["User"])){
+  if((isset($_SESSION["User"])&&($_SESSION["Admin"]==1))){
    $user = $_SESSION["User"];
    $admin = $_SESSION["Admin"];
    $id_genero = $_POST["id_genero"];
@@ -168,7 +168,7 @@ function EditarGenero(){
 }
 
   function BorrarGenero($param){
-    if(isset($_SESSION["User"])){
+    if((isset($_SESSION["User"])&&($_SESSION["Admin"]==1))){
       $user = $_SESSION["User"];
       $admin = $_SESSION["Admin"];
       $this->modelgeneros->BorrarGenero($param[0]);
@@ -179,7 +179,7 @@ function EditarGenero(){
   }
 
   function BorrarPeli($param){
-    if(isset($_SESSION["User"])){
+    if((isset($_SESSION["User"])&&($_SESSION["Admin"]==1))){
       $user = $_SESSION["User"];
       $admin = $_SESSION["Admin"];
       $this->modelpeliculas->BorrarPeli($param[0]);
@@ -190,7 +190,7 @@ function EditarGenero(){
   }
 
 function InsertarPelicula(){
-  if(isset($_SESSION["User"])){
+  if((isset($_SESSION["User"])&&($_SESSION["Admin"]==1))){
     $user = $_SESSION["User"];
     $admin = $_SESSION["Admin"];
     $nombre = $_POST["Nombre_peli"];
@@ -206,7 +206,7 @@ function InsertarPelicula(){
 }
 
 function EditarPelicula(){
-  if(isset($_SESSION["User"])){
+  if((isset($_SESSION["User"])&&($_SESSION["Admin"]==1))){
     $user = $_SESSION["User"];
     $admin = $_SESSION["Admin"];
     $nombre = $_POST["Nombre_peli"];
@@ -223,13 +223,41 @@ function EditarPelicula(){
 }
 
 function Admin(){
-  if(isset($_SESSION["User"])){
+  if((isset($_SESSION["User"])&&($_SESSION["Admin"]==1))){
     $user = $_SESSION["User"];
     $admin = $_SESSION["Admin"];
     $usuarios = $this->modelusuarios->GetUsuario();
     $this->viewpagina->Mostraradmin($user,$admin, $usuarios);
   }else{
-    header(LOGIN);;
+    header(LOGIN);
+  }
+}
+
+function VolverAdmin($param){
+  if((isset($_SESSION["User"])&&($_SESSION["Admin"]==1))){
+    $this->modelusuarios->DarAdmin($param[0]);
+    header(ADMIN);
+  }else{
+    header(LOGIN);
+  }
+}
+
+function QuitarAdmin($param){
+  if((isset($_SESSION["User"])&&($_SESSION["Admin"]==1))){
+    $this->modelusuarios->QuitarAdmin($param[0]);
+    header(ADMIN);
+  }else{
+    header(LOGIN);
+  }
+}
+
+function VerComentarios($param){
+  if((isset($_SESSION["User"])&&($_SESSION["Admin"]==1))){
+
+  }elseif((isset($_SESSION["User"])&&($_SESSION["Admin"]==1))){
+
+  }else{
+
   }
 }
 }
