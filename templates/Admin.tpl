@@ -14,6 +14,7 @@
       </thead>
         <tbody>
              {foreach from=$usuarios item=usu}
+             {if $user !=$usu['usuario']}
           <tr>
             <th scope="row">{$usu['usuario']}</th>
             <th scope="row">{$usu['email']}</th>
@@ -23,6 +24,7 @@
             <th><a href="quitaradmin/{$usu['id_usuario']}">Quitaradmin</a></th>
             {/if}
             </tr>
+             {/if}
     {/foreach}
         </tbody>
     </table>

@@ -27,7 +27,7 @@
           <th scope="row">{$gen['nombre_genero']}</th>
           <th scope="row">{$gen['cantidad_peliculas']}</th>
           {if $user != null}
-            {if $user == "1"}
+            {if $admin == "1"}
               <th><a href="borrargenero/{$gen['id_genero']}">Borrar</a></th>
              <th><a href="mostrarparaeditargenero/{$gen['id_genero']}">Editar</a></th>
             {/if}
@@ -39,6 +39,7 @@
     </table>
   </section>
 {if $user != null}
+  {if $admin == "1"}
   <article class="row">
     <section class="mx-auto col-6 mb-2">
       <form method="post" action="agregar_genero">
@@ -51,6 +52,7 @@
       </form>
     </section>
   </article>
+  {/if}
 {/if}
 
 {include file="Footer.tpl"}

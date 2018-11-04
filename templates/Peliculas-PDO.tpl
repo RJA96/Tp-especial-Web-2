@@ -33,7 +33,7 @@
           {/foreach}
           {if $user != null}
           <th><a href="vercomentarios/{$peli['id_peliculas']}">Comentarios</a></th>
-          {if $user == "1"}
+          {if $admin == "1"}
           <th><a href="borrarpelicula/{$peli['id_peliculas']}">Borrar</a></th>
           <th><a href="mostrarparaeditarpelicula/{$peli['id_peliculas']}">Editar</a></th>
           {/if}
@@ -44,7 +44,7 @@
     </table>
   </section>
 {if $user != null}
-{if $user == "1"}
+{if $admin == "1"}
   <article class="row">
     <section class="mx-auto col-6 mb-2">
       <form method="post" action="agregar_pelicula">
