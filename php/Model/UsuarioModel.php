@@ -26,6 +26,10 @@ class UsuarioModel
     $sentencia->execute(array($nombre,$email, $clave));
   }
 
+  function BorrarUsuario($id){
+    $sentencia = $this->db->prepare( "DELETE from usuario where id_usuario=?");
+    $sentencia->execute(array($id));
+  }
   function GetUser($user){
       $sentencia = $this->db->prepare( "SELECT * FROM usuario WHERE usuario=? LIMIT 1");
       $sentencia->execute(array($user));

@@ -33,7 +33,8 @@
       'Admin'=>'MoviesController#Admin',
       'volveradmin'=>'MoviesController#VolverAdmin',
       'quitaradmin'=>'MoviesController#QuitarAdmin',
-      'vercomentarios'=>'MoviesController#VerComentarios'
+      'vercomentarios'=>'MoviesController#VerComentarios',
+      'borrarusuario'=>'UsuarioController#BorrarUsuario'
     ];
   }
 ?>

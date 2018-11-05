@@ -252,12 +252,21 @@ function QuitarAdmin($param){
 }
 
 function VerComentarios($param){
-  if((isset($_SESSION["User"])&&($_SESSION["Admin"]==1))){
+  $Pelicula = $this->modelpeliculas->getPelicula($param[0]);
+  $Generos = $this->modelgeneros->getGenero();
 
+  if((isset($_SESSION["User"])&&($_SESSION["Admin"]==0))){
+    $user = $_SESSION["User"];
+    $admin = $_SESSION["Admin"];
+    $this->viewPDO->MostrarComentarios($user,$admin,$Pelicula,$Generos);
   }elseif((isset($_SESSION["User"])&&($_SESSION["Admin"]==1))){
+    $user = $_SESSION["User"];
+    $admin = $_SESSION["Admin"];
+    $this->viewPDO->MostrarComentarios($user,$admin,$Pelicula,$Generos);
+  }
 
-  }else{
-
+  else{
+    $this->viewPDO->MostrarComentarios("","",$Pelicula,$Generos);
   }
 }
 }

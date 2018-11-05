@@ -22,10 +22,10 @@
             <a class="nav-item nav-link contacto" href="Contacto">Contacto</a>
             <a class="nav-item nav-link pdo" href="PDO">Generos-PDO</a>
             <a class="nav-item nav-link pdo" href="PDO-Pelicula">Peliculas-PDO</a>
-            <a class="nav-item nav-link pdo" href="Logout">Logout</a>
             {if $admin == "1"}
                 <a class="nav-item nav-link pdo" href="Admin">ADMIN</a>
             {/if}
+            <a class="nav-item nav-link pdo" href="Logout">Logout</a>
         </div>
     </div>
     </nav>

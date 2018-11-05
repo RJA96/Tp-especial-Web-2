@@ -23,6 +23,17 @@ class UsuarioController extends SecuredController
     $this->login->LogearReg($nombre);
   }
 
+  function BorrarUsuario($id){
+    if((isset($_SESSION["User"])&&($_SESSION["Admin"]==1))){
+      $user = $_SESSION["User"];
+      $admin = $_SESSION["Admin"];
+      $this->model->BorrarUsuario($id[0]);
+      header(ADMIN);
+    }else{
+      header(LOGIN);
+    }
+  }
+
 }
 
  ?>

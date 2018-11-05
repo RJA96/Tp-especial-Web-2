@@ -13,13 +13,13 @@
         <th scope="col">Valoracion</th>
         <th scope="col">Duracion</th>
         <th scope="col">Genero</th>
-        <th scope="col">Comentarios</th>
         {if $user != null}
         {if $admin == "1"}
         <th scope="col">Borrar</th>
         <th scope="col">Editar</th>
         {/if}
         {/if}
+        <th scope="col">Imagen</th>
       </tr>
     </thead>
     <tbody>
@@ -46,6 +46,9 @@
     </tbody>
   </table>
 </section>
+<section class="Comentarios mx-auto mt-2 col-8">
 
+
+</section>
 
 {include file="Footer.tpl"}

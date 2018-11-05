@@ -10,6 +10,7 @@
           <th scope="col">Usuario</th>
           <th scope="col">Email</th>
           <th scope="col">VolverAdmin</th>
+          <th scope="col">Borrar</th>
         </tr>
       </thead>
         <tbody>
@@ -23,6 +24,7 @@
              {else}
             <th><a href="quitaradmin/{$usu['id_usuario']}">Quitaradmin</a></th>
             {/if}
+            <th><a href="borrarusuario/{$usu['id_usuario']}">BORRAR</a></th>
             </tr>
              {/if}
     {/foreach}
