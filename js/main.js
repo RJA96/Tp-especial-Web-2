@@ -1,6 +1,6 @@
 "use strict";
 
-let aux = 0;
+
 function load(){
   let container = document.querySelector(".comentarios");
   fetch(api/comentario)

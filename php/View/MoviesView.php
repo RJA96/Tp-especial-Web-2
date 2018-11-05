@@ -39,11 +39,12 @@ class MoviesView{
     $smarty->display('templates/EditarGenero.tpl');
   }
 
-  function MostrarComentarios($user,$admin,$comentarios){
+  function MostrarComentarios($user,$admin,$comentarios,$Pelicula){
     $smarty = new Smarty();
     $smarty->assign('user',$user);
     $smarty->assign('admin',$admin);
     $smarty->assign('comentarios',$comentarios);
+    $smarty->assign('Pelicula',$Pelicula);
     $smarty->display('templates/Comentarios.tpl');
   }
 }
