@@ -46,6 +46,7 @@
     </tbody>
   </table>
 </section>
+<button type="button" class="Coment"name="Coment">traercomentarios</button>
 <section class="Comentarios mx-auto mt-2 col-8">
 
 
