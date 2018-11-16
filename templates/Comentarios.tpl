@@ -29,7 +29,7 @@
         <td scope="row">{$peli['año']}</td>
         <td scope="row">{$peli['valoracion']}</td>
         <td scope="row">{$peli['duracion']}</td>
-        <td class="d-none" id = "id_p" value="{$peli['id_peliculas']}">{$peli['id_peliculas']}</td>
+        <td class="d-none" id = "id_p" data="{$peli['id_peliculas']}">{$peli['id_peliculas']}</td>
         {foreach from=$Generos item=gen}
           {if $peli['id_genero'] == $gen['id_genero']}
             <th scope="row"><a href="mostrarpeliculasporgenero/{$gen['id_genero']}">{$gen['nombre_genero']}</a></th>

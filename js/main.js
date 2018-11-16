@@ -11,7 +11,7 @@ fetch('js/templates/comentarios.handlebars')
 }
 
 function getComentarios() {
-    let ID = document.getElementById('id_p');
+    let ID = document.querySelector('#id_p').getAttribute("data");
     console.log(ID);
     fetch("api/comentario/"+ID)
     .then(r => r.json())
