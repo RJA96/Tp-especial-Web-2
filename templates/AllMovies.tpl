@@ -1,7 +1,11 @@
 {if $user != null}
 {include file="HeaderLogout.tpl"}
+{if $admin == "1"}
+<button class="d-none admin" data="admin"></button>
+{/if}
 {else}
 {include file="Header.tpl"}
+<button class="d-none admin" data="noadmin"></button>
 {/if}
 
 

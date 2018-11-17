@@ -12,8 +12,7 @@ class ComentariosModel{
     .'dbname=db_movies;charset=utf8'
     , 'root', '');
   }
-  
-  
+
   function GetComentariosAll(){
     $sentencia = $this->db->prepare( "SELECT * FROM comentario");
     $sentencia->execute();
@@ -22,7 +21,8 @@ class ComentariosModel{
 
 
   function GetComentariosPelicula($id){
-    $sentencia = $this->db->prepare( "SELECT * FROM comentario WHERE id_pelicula=?");
+
+    $sentencia = $this->db->prepare( "SELECT c.*, u.usuario, p.nombre FROM comentario c INNER JOIN usuario u ON (c.id_usuario = u.id_usuario) INNER JOIN pelicula p ON (c.id_pelicula = p.id_peliculas)WHERE c.id_pelicula= ?");
     $sentencia->execute(array($id));
     return $sentencia->fetchall(PDO::FETCH_ASSOC);
   }

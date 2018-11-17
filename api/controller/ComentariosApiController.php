@@ -12,8 +12,8 @@ class ComentariosApiController extends Api{
   }
 
   function GetComentarioPelicula($param){
-     $id_comentario = $param[0];
-    $arreglo = $this->model->GetComentariosPelicula($id_comentario);
+     $id_pelicula = $param[0];
+    $arreglo = $this->model->GetComentariosPelicula($id_pelicula);
      $data = $arreglo;
       if(isset($data)){
         return $this->json_response($data, 200);

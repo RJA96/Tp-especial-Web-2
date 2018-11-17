@@ -1,5 +1,9 @@
  <ul class="list-group">
+{{esadmin}}
   {{#each comentarios}}
-      <li class="list-group-item list-group-item-dark">{{id_comentario}} ----- {{coment}}---{{id_pelicula}} ----- {{id_usuario}}<a href="borrar/{{id_comentario}}">BORRAR</a></li>
+      <li class="list-group-item list-group-item-dark">{{usuario}} ----- {{coment}}---{{nombre}}
+{{#if esadmin}}
+        <button class="borrar btn btn-dark" data="{{id_comentario}}">BORRAR</button></li>
+{{/if}}
   {{/each}}
 </ul>
