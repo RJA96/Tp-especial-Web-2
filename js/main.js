@@ -1,6 +1,7 @@
 "use strict";
 let templatecomentarios;
 document.querySelector(".Coment").addEventListener("click", load);
+document.querySelector(".comentario-js").addEventListener("click", create);
 function load(){
   fetch('js/templates/comentarios.handlebars')
     .then(response => response.text())
@@ -33,12 +34,11 @@ function mostrarComentarios(jsonComentarios) {
     let adminn = document.querySelector(".admin").getAttribute("data");
     console.log(adminn);
     if (adminn==="admin") {
-      adminn = 0;
+      adminn = true;
     }
     else {
-      adminn = 1;
+      adminn = false;
     }
-    console.log(adminn);
     let context = {
         comentarios: jsonComentarios,
         esadmin: adminn
@@ -51,4 +51,20 @@ function mostrarComentarios(jsonComentarios) {
        });
 
 }
-    // setTimeout(load(), 2000);
+
+function create(){
+  let ID = document.querySelector('#id_p').getAttribute("data");
+  let comentario = {
+    "coment": document.querySelector(".comentario").value,
+    "id_pelicula": document.querySelector('#id_p').getAttribute("data"),
+    "id_usuario": document.querySelector(".admin").getAttribute("data-nombre")
+  }
+  console.log(comentario);
+  fetch("api/comentario/"+ID,  {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(comentario)
+              })
+              .then(r => load())
+              .catch(error => console.log("error"));
+}

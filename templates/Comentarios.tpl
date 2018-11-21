@@ -1,11 +1,11 @@
 {if $user != null}
 {include file="HeaderLogout.tpl"}
 {if $admin == "1"}
-<button class="d-none admin" data="admin"></button>
+<button class="d-none admin" data="admin" data-nombre="{$user}"></button>
 {/if}
 {else}
 {include file="Header.tpl"}
-<button class="d-none admin" data="noadmin"></button>
+<button class="d-none admin" data="noadmin"data-nombre="{$user}"></button>
 {/if}
 
 <section class="mx-auto mt-2 col-8">
@@ -39,23 +39,35 @@
             <th scope="row"><a href="mostrarpeliculasporgenero/{$gen['id_genero']}">{$gen['nombre_genero']}</a></th>
           {/if}
         {/foreach}
-        {if $user != null}td
+        {if $user != null}
         {if $admin == "1"}
         <td><a href="borrarpelicula/{$peli['id_peliculas']}">Borrar</a></th>
 
         <td><a href="mostrarparaeditarpelicula/{$peli['id_peliculas']}">Editar</a></th>
         {/if}
         {/if}
-        <td><img src="{$peli['imagen']}"
+        <td><img src="{$peli['imagen']}"></td>
       </tr>
       {/foreach}
     </tbody>
   </table>
 </section>
-<button type="button" class="Coment"name="Coment">traercomentarios</button>
+<section class="mx-auto">
+<button type="button" class="Coment btn btn-dark upload mx-auto col-3"name="Coment">Ver Comentarios</button>
+</section>
 <section class="Comentarios mx-auto mt-2 col-8">
 
 
 </section>
+{if $user != null}
+<form method="POST">
+  <section class="mt-2 form-group">
+    <input class=" form-control comentario col-5" placeholder="Comentario" type="text" name="" value="">
+  <section class="form-group mb-2">
+    <button type="button" class="comentario-js"name="button">Subir</button>
+
+  </section>
+</form>
+{/if}
 
 {include file="Footer.tpl"}

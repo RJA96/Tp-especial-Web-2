@@ -1,11 +1,11 @@
 {if $user != null}
 {include file="HeaderLogout.tpl"}
 {if $admin == "1"}
-<button class="d-none admin" data="admin"></button>
+<button class="d-none admin" data="admin" data-nombre="{$user}"></button>
 {/if}
 {else}
 {include file="Header.tpl"}
-<button class="d-none admin" data="noadmin"></button>
+<button class="d-none admin" data="noadmin"data-nombre="{$user}"></button>
 {/if}
     <section class="mx-auto mt-2 col-8">
     <table class="table table-dark">
@@ -19,16 +19,16 @@
       </thead>
         <tbody>
              {foreach from=$usuarios item=usu}
-             {if $user !=$usu['usuario']}
+             {if $user !=$usu['id_usuario']}
           <tr>
-            <th scope="row">{$usu['usuario']}</th>
-            <th scope="row">{$usu['email']}</th>
+            <td scope="row">{$usu['usuario']}</td>
+            <td scope="row">{$usu['email']}</td>
               {if $usu['admin']==0}
-            <th><a href="volveradmin/{$usu['id_usuario']}">Volveradmin</a></th>
+            <td><a href="volveradmin/{$usu['id_usuario']}">Volveradmin</a></td>
              {else}
-            <th><a href="quitaradmin/{$usu['id_usuario']}">Quitaradmin</a></th>
+            <td><a href="quitaradmin/{$usu['id_usuario']}">Quitaradmin</a></td>
             {/if}
-            <th><a href="borrarusuario/{$usu['id_usuario']}">BORRAR</a></th>
+            <td><a href="borrarusuario/{$usu['id_usuario']}">BORRAR</a></td>
             </tr>
              {/if}
     {/foreach}

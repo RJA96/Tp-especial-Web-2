@@ -1,11 +1,11 @@
 {if $user != null}
 {include file="HeaderLogout.tpl"}
 {if $admin == "1"}
-<button class="d-none admin" data="admin"></button>
+<button class="d-none admin" data="admin" data-nombre="{$user}"></button>
 {/if}
 {else}
 {include file="Header.tpl"}
-<button class="d-none admin" data="noadmin"></button>
+<button class="d-none admin" data="noadmin"data-nombre="{$user}"></button>
 {/if}
   <section class="mx-auto mt-2 col-8">
     <table class="table table-striped table-dark">
