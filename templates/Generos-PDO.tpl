@@ -17,7 +17,7 @@
           <th scope="col">Nombre</th>
           <th scope="col">Cantidad de Peliculas</th>
           {if $user != null}
-            {if $user == "1"}
+            {if $admin == "1"}
               <th scope="col">Borrar</th>
               <th scope="col">Editar</th>
             {/if}
@@ -49,7 +49,6 @@
       <form method="post" action="agregar_genero"enctype="multipart/form-data">
         <section class="mt-2 form-group">
           <input type="text" class="form-control" id="Nombre" placeholder="Nombre"name="Nombre" value="">
-          <input type="file" class="form-control" id="imagenes" name="imagenes">
           <input type="number" class="form-control" id="cantidad_peliculas" placeholder="cantidad_peliculas"name="cantidad_peliculas" value="">
         <section class="form-group mb-2">
           <button type="submit" class="btn btn-dark upload" name="Upload">Upload</button>

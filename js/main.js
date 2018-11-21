@@ -12,8 +12,6 @@ function load(){
 }
 
 function borrar(id){
-  console.log("borrar");
-  console.log(id);
   fetch("api/comentario/"+id,  {
                    method: 'DELETE',
                     headers: {'Content-Type': 'application/json'},
@@ -22,7 +20,6 @@ function borrar(id){
     }
 function getComentarios() {
     let ID = document.querySelector('#id_p').getAttribute("data");
-    console.log(ID);
     fetch("api/comentario/"+ID)
     .then(r => r.json())
     .then(jsonComentarios => {
@@ -32,7 +29,6 @@ function getComentarios() {
 
 function mostrarComentarios(jsonComentarios) {
     let adminn = document.querySelector(".admin").getAttribute("data");
-    console.log(adminn);
     if (adminn==="admin") {
       adminn = true;
     }
@@ -49,6 +45,7 @@ function mostrarComentarios(jsonComentarios) {
 
     b.forEach(b=> {b.addEventListener("click",function(){borrar(b.getAttribute("data"))});
        });
+    document.querySelector(".Coment").classList.add('d-none')
 
 }
 
@@ -56,10 +53,10 @@ function create(){
   let ID = document.querySelector('#id_p').getAttribute("data");
   let comentario = {
     "coment": document.querySelector(".comentario").value,
+    "puntaje": document.querySelector(".puntaje-js").value,
     "id_pelicula": document.querySelector('#id_p').getAttribute("data"),
     "id_usuario": document.querySelector(".admin").getAttribute("data-nombre")
   }
-  console.log(comentario);
   fetch("api/comentario/"+ID,  {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},

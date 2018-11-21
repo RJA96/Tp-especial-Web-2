@@ -26,9 +26,9 @@ class ComentariosModel{
     return $sentencia->fetchall(PDO::FETCH_ASSOC);
   }
 
-  function InsertarComentario($coment,$idpelicula, $idusuario){
-    $sentencia = $this->db->prepare("INSERT INTO comentario(coment, id_pelicula, id_usuario) VALUES(?,?,?)");
-    $sentencia->execute(array($coment,$idpelicula, $idusuario));
+  function InsertarComentario($coment,$puntaje,$idpelicula, $idusuario){
+    $sentencia = $this->db->prepare("INSERT INTO comentario(coment,puntaje, id_pelicula, id_usuario) VALUES(?,?,?,?)");
+    $sentencia->execute(array($coment,$puntaje,$idpelicula, $idusuario));
   }
 
   function BorrarComentario($id){

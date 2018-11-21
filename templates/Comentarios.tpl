@@ -46,14 +46,14 @@
         <td><a href="mostrarparaeditarpelicula/{$peli['id_peliculas']}">Editar</a></th>
         {/if}
         {/if}
-        <td><img src="{$peli['imagen']}"></td>
+        <td><img src="{$peli['img']}"width="100" height="150"></td>
       </tr>
       {/foreach}
     </tbody>
   </table>
 </section>
-<section class="mx-auto">
-<button type="button" class="Coment btn btn-dark upload mx-auto col-3"name="Coment">Ver Comentarios</button>
+<section class="mx-auto col-8">
+<button type="button" class="Coment btn btn-dark upload mx-auto"name="Coment">Ver Comentarios</button>
 </section>
 <section class="Comentarios mx-auto mt-2 col-8">
 
@@ -61,10 +61,20 @@
 </section>
 {if $user != null}
 <form method="POST">
-  <section class="mt-2 form-group">
-    <input class=" form-control comentario col-5" placeholder="Comentario" type="text" name="" value="">
+  <section class="mt-2 mx-auto form-group col-4">
+    <input class=" form-control comentario" placeholder="Comentario" type="text" name="" value="">
+    <section class="mt-2 form-group col-6">
+    <select class="puntaje-js form-control" name="">
+      <option class="d-none" value="">Puntaje</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+    </section>
   <section class="form-group mb-2">
-    <button type="button" class="comentario-js"name="button">Subir</button>
+    <button type="button" class="comentario-js btn btn-dark"name="button">Subir Comentario</button>
 
   </section>
 </form>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 16-11-2018 a las 13:44:27
+-- Tiempo de generación: 21-11-2018 a las 20:49:55
 -- Versión del servidor: 10.1.36-MariaDB
 -- Versión de PHP: 7.2.11
 
@@ -31,6 +31,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `comentario` (
   `id_comentario` int(11) NOT NULL,
   `coment` text NOT NULL,
+  `puntaje` int(11) NOT NULL,
   `id_pelicula` int(11) NOT NULL,
   `id_usuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -39,13 +40,10 @@ CREATE TABLE `comentario` (
 -- Volcado de datos para la tabla `comentario`
 --
 
-INSERT INTO `comentario` (`id_comentario`, `coment`, `id_pelicula`, `id_usuario`) VALUES
-(1, 'Esta pelicula es genial test', 10, 3),
-(10, 'Esta pelicula es genial test', 10, 3),
-(11, 'Esta pelicula es genial test', 10, 3),
-(12, 'Esta pelicula es genial test', 10, 3),
-(13, 'Esta pelicula es genial test', 10, 3),
-(14, 'Esta pelicula es genial test777777', 10, 3);
+INSERT INTO `comentario` (`id_comentario`, `coment`, `puntaje`, `id_pelicula`, `id_usuario`) VALUES
+(14, 'Esta peliculdsadasdasdsadasdsadsaa es genial test', 0, 10, 3),
+(15, 'ewfwef', 0, 10, 3),
+(23, 'Esta  es genial test', 4, 10, 3);
 
 -- --------------------------------------------------------
 
@@ -68,9 +66,7 @@ INSERT INTO `genero` (`id_genero`, `nombre_genero`, `cantidad_peliculas`) VALUES
 (13, 'Comedia', 1500),
 (14, 'Drama ', 150),
 (15, 'Suspenso', 125),
-(17, 'TEst', 44),
-(18, 'Test', 1500),
-(19, 'Test', 1500);
+(17, 'TEst', 44);
 
 -- --------------------------------------------------------
 
@@ -84,6 +80,7 @@ CREATE TABLE `pelicula` (
   `año` int(11) NOT NULL,
   `valoracion` int(11) NOT NULL,
   `duracion` int(11) NOT NULL,
+  `img` text NOT NULL,
   `id_genero` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -91,17 +88,16 @@ CREATE TABLE `pelicula` (
 -- Volcado de datos para la tabla `pelicula`
 --
 
-INSERT INTO `pelicula` (`id_peliculas`, `nombre`, `año`, `valoracion`, `duracion`, `id_genero`) VALUES
-(10, 'The Fault in Our Stars', 2014, 125, 3, 15),
-(13, 'Misión imposible: Fallout', 2018, 4, 148, 11),
-(14, 'John Wick', 2014, 4, 101, 11),
-(16, '¿Qué pasó ayer?', 2009, 3, 115, 13),
-(17, 'Noche de juegos', 2018, 3, 100, 13),
-(18, 'Moonlight', 2016, 4, 115, 14),
-(19, 'Fragmentado', 2016, 5, 117, 15),
-(20, 'Inception', 2010, 5, 150, 15),
-(21, 'Test', 2019, 125, 3, 15),
-(22, 'The Fault in Our Stars', 2014, 125, 3, 15);
+INSERT INTO `pelicula` (`id_peliculas`, `nombre`, `año`, `valoracion`, `duracion`, `img`, `id_genero`) VALUES
+(10, 'The Fault in Our Stars', 2014, 125, 3, 'https://images-na.ssl-images-amazon.com/images/I/A1c9bOWb6RL.jpg', 11),
+(13, 'Misión imposible: Fallout', 2018, 4, 148, '', 11),
+(14, 'John Wick', 2014, 4, 101, '', 11),
+(16, '¿Qué pasó ayer?', 2009, 3, 115, '', 13),
+(17, 'Noche de juegos', 2018, 3, 100, '', 13),
+(18, 'Moonlight', 2016, 4, 115, '', 14),
+(19, 'Fragmentado', 2016, 5, 117, '', 15),
+(20, 'Inception', 2010, 5, 150, '', 15),
+(21, 'Test', 2019, 125, 3, '', 15);
 
 -- --------------------------------------------------------
 
@@ -166,7 +162,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `comentario`
 --
 ALTER TABLE `comentario`
-  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT de la tabla `genero`
