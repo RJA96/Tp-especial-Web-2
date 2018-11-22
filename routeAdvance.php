@@ -5,6 +5,17 @@ require_once "php/Controller/UsuarioController.php";
 require_once "php/Controller/LoginController.php";
 require_once "php/Controller/SecuredController.php";
 
+function dataBase(){
+try{
+  $connection = new PDO('mysql:host=localhost;dbname=db_movies;charset=utf8', 'root', '');
+}catch(Exception $e){
+  $db = new PDO('mysql:host=localhost;charset=utf8', 'root', '');
+      $sql = file_get_contents('SQL/db_movies.sql');
+      $db->exec($sql);
+      }
+}
+
+dataBase();
 function parseURL($url)
 {
   $urlExploded = explode('/', $url);

@@ -1,3 +1,5 @@
+CREATE database db_movies;
+use db_movies;
 -- phpMyAdmin SQL Dump
 -- version 4.8.3
 -- https://www.phpmyadmin.net/
