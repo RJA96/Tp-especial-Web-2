@@ -53,13 +53,13 @@
 {if $admin == "1"}
   <article class="row">
     <section class="mx-auto col-6 mb-2">
-      <form method="post" action="agregar_pelicula">
+      <form method="post" action="agregar_pelicula" enctype="multipart/form-data">
         <section class="mt-2 form-group">
           <input type="text" class="form-control" placeholder="Nombre"id="Nombre_peli"name="Nombre_peli" value="">
           <input type="number" class="form-control" placeholder="Año"id="Año"name="Año" value="">
           <input type="number" class="form-control" placeholder="Valoración"id="Valoracion"name="Valoracion" value="">
           <input type="number" class="form-control" placeholder="Duración"id="Duracion"name="Duracion" value="">
-          <input type="text" class="form-control" placeholder="Img"id="Img"name="Img" value="">
+          <input type="file" class="form-control" placeholder="imagenes"id="Img"name="Img[]" value="">
           <select class="form-control" id="genero"  name="genero">
                      {foreach from=$Generos item=gen}
                      <option class="dropdown-item" value="{$gen['id_genero']}" name="categoria">{$gen['nombre_genero']}</a>

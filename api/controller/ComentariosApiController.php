@@ -21,7 +21,6 @@ class ComentariosApiController extends Api{
         return $this->json_response(null, 404);
       }
   }
-
   function DeleteComentario($param = null){
     if(count($param) == 1){
         $id_comentario = $param[0];
@@ -41,6 +40,8 @@ class ComentariosApiController extends Api{
     $r = $this->model->InsertarComentario($objetoJson->coment,$objetoJson->puntaje,$objetoJson->id_pelicula,$objetoJson->id_usuario );
     return $this->json_response($r, 200);
   }
+
+
 
 
 

@@ -33,8 +33,9 @@ class MoviesModel{
     }
 
     function InsertarPelicula($nombre, $año, $valoracion, $duracion,$img, $genero){
+      $path = $this->subirImagen($img);
       $sentencia = $this->db->prepare("INSERT INTO pelicula(nombre, año, valoracion, duracion, img, id_genero) VALUES(?,?,?,?,?,?)");
-      $sentencia->execute(array($nombre, $año, $valoracion, $duracion, $img, $genero));
+      $sentencia->execute(array($nombre, $año, $valoracion, $duracion, $path, $genero));
     }
     function BorrarPeli($id_peli){
     $sentencia = $this->db->prepare( "DELETE from pelicula where id_peliculas=?");
@@ -42,9 +43,16 @@ class MoviesModel{
     }
 
     function EditarPelicula($nombre, $año, $valoracion ,$duracion ,$img,$id_genero, $id_pelicula){
+      $path = $this->subirImagen($img);
       $sentencia = $this->db->prepare("UPDATE pelicula SET nombre=?,año=?,valoracion=?,duracion=?,img=?,id_genero=? WHERE id_peliculas=?");
-      $sentencia->execute(array($nombre, $año, $valoracion, $duracion,$img, $id_genero, $id_pelicula));
+      $sentencia->execute(array($nombre, $año, $valoracion, $duracion,$path, $id_genero, $id_pelicula));
     }
+    private function subirImagen($imagen){
+       $destino_final = 'IMGTEMP/' . uniqid() . '.jpg';
+       echo "destino_final: ".$destino_final;
+       move_uploaded_file($imagen, $destino_final);
+       return $destino_final;
+   }
 
 }
 ?>

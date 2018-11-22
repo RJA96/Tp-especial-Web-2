@@ -197,9 +197,9 @@ function InsertarPelicula(){
     $Año = $_POST["Año"];
     $Valoracion = $_POST["Valoracion"];
     $Duracion = $_POST["Duracion"];
-    $img = $_POST["Img"];
+    $img =  $_FILES['Img']['tmp_name'];
     $genero = $_POST["genero"];
-    $this->modelpeliculas->InsertarPelicula($nombre, $Año, $Valoracion ,$Duracion,$img,$genero);
+    $this->modelpeliculas->InsertarPelicula($nombre, $Año, $Valoracion ,$Duracion,$img[0],$genero);
     header(PDOPELICULA);
   }else{
     header(LOGIN);
@@ -214,10 +214,10 @@ function EditarPelicula(){
     $Año = $_POST["Año"];
     $Valoracion = $_POST["Valoracion"];
     $Duracion = $_POST["Duracion"];
-    $img = $_POST["Img"];
+    $img =  $_FILES['Img']['tmp_name'];
     $genero = $_POST["genero"];
     $id_peli = $_POST["id_peli"];
-    $this->modelpeliculas->EditarPelicula($nombre, $Año, $Valoracion ,$Duracion ,$img,$genero,$id_peli);
+    $this->modelpeliculas->EditarPelicula($nombre, $Año, $Valoracion ,$Duracion ,$img[0],$genero,$id_peli);
     header(PDOPELICULA);
   }else{
     header(LOGIN);
