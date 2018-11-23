@@ -22,29 +22,25 @@ class ComentariosApiController extends Api{
       }
   }
   function DeleteComentario($param = null){
-    if(count($param) == 1){
-        $id_comentario = $param[0];
-        $r =  $this->model->BorrarComentario($id_comentario);
-        if($r == false){
-          return $this->json_response($r, 300);
-        }
+      if(count($param) == 1){
+          $id_comentario = $param[0];
+          $r =  $this->model->BorrarComentario($id_comentario);
+          if($r == false){
+            return $this->json_response($r, 300);
+          }
 
-        return $this->json_response($r, 200);
-    }else{
-      return  $this->json_response("No task specified", 300);
+          return $this->json_response($r, 200);
+      }else{
+        return  $this->json_response("No task specified", 300);
+      }
     }
-  }
 
-  function InsertComentario(){
-    $objetoJson = $this->getJSONData();
-    $r = $this->model->InsertarComentario($objetoJson->coment,$objetoJson->puntaje,$objetoJson->id_pelicula,$objetoJson->id_usuario );
-    return $this->json_response($r, 200);
-  }
+    function InsertComentario(){
+      $objetoJson = $this->getJSONData();
+      $r = $this->model->InsertarComentario($objetoJson->coment,$objetoJson->puntaje,$objetoJson->id_pelicula,$objetoJson->id_usuario );
+      return $this->json_response($r, 200);
+    }
+}
 
-
-
-
-
-  }
 
  ?>
